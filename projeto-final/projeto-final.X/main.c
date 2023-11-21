@@ -6,21 +6,73 @@
 #pragma config LVP = OFF // Desabilita gravação em baixa
 #pragma config DEBUG = ON // Habilita debug
 #pragma config MCLRE = ON // Habilita MCLR
-//#pragma config CCP1MX = ON // Pino RC1 utilizado em CCP2
 #define _XTAL_FREQ 20000000 // uC opera com cristal de 20 MHz
+unsigned char contador = 0;
+unsigned int valorconv = 0;
+int duty = 768; // *porcentagem
 
-void interrupt NoPriorityISR(void) {
-    if(INTCONbits.TMR0IF)
-        INTCONbits.TMR0IF = 0; // limpa a flag
+// 1500hz
+void interrupt HighPriorityISR(void){
+    INTCONbits.TMR0IF = 0; // limpa a flag
+    ADCON0bits.GO_DONE = 1; // INICIA a conversao
+    valorconv = 256 * ADRESH + ADRESL;
+    TMR0H =  0xF9;
+    TMR0L = 0x7D;
+
+    contador++;
+    if(contador == 50){
+        contador = 0;
+
+    }
 }
 
-
 void main(void) {
-    
+    int mil, cent, dez, uni;
+    int aux = 0;
     //Configuracao entradas e saidas
     TRISA = 0xFF; // RA0 e RA3 como entradas
     TRISC = 0x00; // RC1 e RC2 como saidas
-    TRISB = 0XFF // RB0 e RB1 como entradas
+    TRISB = 0XFF; // RB0 e RB1 como entradas
+    
+    //Configuração para o algoritmo de variação da razão cíclica (CCP1)
+    CCP1CONbits.CCP1M3 = 1;
+    CCP1CONbits.CCP1M2 = 1;
+    CCP1CONbits.CCP1M1 = 0;
+    CCP1CONbits.CCP1M0 = 0;
+    
+    // Configuracao timer 2 e postscale
+    T2CONbits.T2OUTPS3 = 0;
+    T2CONbits.T2OUTPS2 = 0;
+    T2CONbits.T2OUTPS1 = 0;
+    T2CONbits.T2OUTPS0 = 0; 
+    T2CONbits.TMR2ON = 1;
+    T2CONbits.T2CKPS1 = 0;
+    T2CONbits.T2CKPS0 = 1;
+    // PR2 = (Tpwm / 4 x Tosc x (Preescaler do |TMR2)) - 1
+    // (2^8)*(200*(10^-9))*4
+    // PR2 = (1/6500)/(200*(10^-9)*4)-1 = 191
+    PR2 = 191;
+    
+    
+    CCPR1L = (char)(duty >> 2);
+    CCP1CONbits.DC1B0 = duty%2;
+    CCP1CONbits.DC1B1 = (duty >> 1)%2;
+
+    // Configuracao conversor A/D
+    PIE1bits.ADIE = 1; // desativa o bit de interrupcao
+    PIR1bits.ADIF = 0; // limpa a flag
+    IPR1bits.ADIP = 0; // prioridade baixa do A/D
+    
+    //Configura o A/D estar no RA0/AN0
+    ADCON0bits.CHS3 = 0;
+    ADCON0bits.CHS2 = 0;
+    ADCON0bits.CHS1 = 0;
+    ADCON0bits.CHS0 = 0;
+    
+    // Configuracao e habilita interrupcoes globais
+    RCONbits.IPEN = 1;    // Habilitar niveis prioridades de interrupcao
+    INTCONbits.GIEH = 1;   // Habilitar interrupcoes globais
+    INTCONbits.GIEL = 1;  // Habilitar interrupcoes de periféricos
     
     // Configurar interrupcoes externas INT1 e INT2
     INTCON3bits.INT1IE = 1; // Habilitar INT1
@@ -31,16 +83,6 @@ void main(void) {
     INTCON3bits.INT2IF = 0; // Limpar flag INT2
     INTCON3bits.INT1IP = 0; // Baixa do INT1 prioridade
     INTCON3bits.INT2IP = 0; // Baixa do INT2 prioridade
-    
-    // Configuracao e habilita interrupcoes globais
-    RCONbits.IPEN = 0;    // Desabilitar niveis prioridades de interrupcao
-    INTCONbits.GIE = 1;   // Habilitar interrupcoes globais
-    INTCONbits.PEIE = 1;  // Habilitar interrupcoes de periféricos
-    
-    // Configuracao conversor A/D
-    PIE1bits.ADIE = 1; // ativa o bit de interrupcao
-    PIR1bits.ADIF = 0; // limpa a flag
-    IPR1bits.ADIP = 1; // prioridade alta do A/D
     
     // Configuracao do Timer0
     T0CONbits.TMR0ON = 1;
@@ -64,31 +106,29 @@ void main(void) {
     CCP2CONbits.CCP2M3 = 1;
     CCP2CONbits.CCP2M2 = 1;
     
-    //Configuração para o algoritmo de variação da razão cíclica
-    // PR2 = 20000000 / (4 * 6500 * 16) - 1 = 47
-    T2CONbits.TMR2ON = 1;
-    T2CONbits.T2CKPS1 = 1;
-    PR2 = 47;
-    CCP1CONbits.CCP1M3 = 1;
-    CCP1CONbits.CCP1M2 = 0;
-    CCP1CONbits.CCP1M1 = 1;
-    CCP1CONbits.CCP1M0 = 1;
-    CCPR1L = 0x12;
-    CCPR1H = 0x7A;
-    
     //Inicialização do LCD
     OpenXLCD(FOUR_BIT & LINES_5X7); 
     WriteCmdXLCD(0x01); 
     __delay_ms(2);
 
+    WriteCmdXLCD(0x80);
+    putsXLCD("Ref: ");
+    WriteCmdXLCD(0x89);
+    putsXLCD("Atual: ");
+    WriteCmdXLCD(0xC3);
+    putsXLCD("Razao: ");
+    
     while(1){
-        WriteCmdXLCD(0x80);
-        putsXLCD("Ref: ");
-        WriteCmdXLCD(0x89);
-        putsXLCD("Atual: ");
-        WriteCmdXLCD(0xC3);
-        putsXLCD("Razao: ");
-        __delay_ms(33); // 33 ms => 30Hz
+        long int resultado = 0;
+        resultado = (valorconv * 4.89);
+        mil = resultado / 1000;
+        aux = resultado % 1000;
+        cent = aux / 100;
+        aux = aux % 100;
+        dez = aux / 10;
+        uni = aux % 10;
+       
+
     }
     
 }
