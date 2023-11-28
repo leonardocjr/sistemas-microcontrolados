@@ -4850,27 +4850,44 @@ void putrsXLCD(const char *);
 #pragma config MCLRE = ON
 
 unsigned char contador = 0;
+unsigned long int result = 0;
+unsigned long int result2 = 0;
+unsigned long int temp = 0;
 unsigned int valorconv = 0;
-int duty = 768*0.3;
-
+int dc = 0;
+int duty = 768*0, leiturapotenciometro = 0;
 
 void interrupt HighPriorityISR(void){
 INTCONbits.TMR0IF = 0;
+TMR0L = 100;
 ADCON0bits.GO_DONE = 1;
-valorconv = 256 * ADRESH + ADRESL;
-TMR0H = 0xF9;
-TMR0L = 0x7D;
-
-contador++;
-if(contador == 50){
+if(contador == 100){
 contador = 0;
+leiturapotenciometro = 1;
+
+# 29
+}
+
+# 34
+}
+
+void interrupt low_priority LowPriorityISR(void) {
+PIR1bits.ADIF = 0;
+valorconv = 256 * ADRESH + ADRESL;
+contador++;
+if(leiturapotenciometro){
+leiturapotenciometro = 0;
+result2 = 4.89*valorconv;
+
+} else {
+result = valorconv*4.89;
 
 }
 }
 
 void main(void) {
-int mil, cent, dez, uni;
-int aux = 0;
+int mil,cent,aux,dez,uni;
+int mil2,cent2,aux2,dez2,uni2;
 
 TRISA = 0xFF;
 TRISC = 0x00;
@@ -4895,7 +4912,6 @@ T2CONbits.T2CKPS0 = 1;
 
 PR2 = 191;
 
-
 CCPR1L = (char)(duty >> 2);
 CCP1CONbits.DC1B0 = duty%2;
 CCP1CONbits.DC1B1 = (duty >> 1)%2;
@@ -4908,8 +4924,9 @@ IPR1bits.ADIP = 0;
 
 ADCON0bits.CHS3 = 0;
 ADCON0bits.CHS2 = 0;
-ADCON0bits.CHS1 = 0;
-ADCON0bits.CHS0 = 0;
+ADCON0bits.CHS1 = 1;
+ADCON0bits.CHS0 = 1;
+ADCON0bits.ADON = 1;
 
 
 RCONbits.IPEN = 1;
@@ -4927,13 +4944,12 @@ INTCON3bits.INT1IP = 0;
 INTCON3bits.INT2IP = 0;
 
 
-T0CONbits.TMR0ON = 1;
-T0CONbits.T08BIT = 0;
-T0CONbits.T0CS = 0;
-T0CONbits.PSA = 0;
-T0CONbits.T0PS2 = 0;
-T0CONbits.T0PS1 = 0;
-T0CONbits.T0PS0 = 0;
+TMR0L = 100;
+T0CON = 0b11010101;
+TRISAbits.TRISA0 = 1;
+ADCON1 = 0b00001011;
+
+ADCON2 = 0b10010101;
 INTCONbits.TMR0IF = 0;
 INTCONbits.TMR0IE = 1;
 INTCON2bits.TMR0IP = 1;
@@ -4941,8 +4957,7 @@ INTCON2bits.TMR0IP = 1;
 
 
 
-TMR0H = 0xF9;
-TMR0L = 0x7D;
+TMR0L = 100;
 
 
 CCP2CONbits.CCP2M3 = 1;
@@ -4953,24 +4968,37 @@ OpenXLCD(0b00101100 & 0b00111000);
 WriteCmdXLCD(0x01);
 _delay((unsigned long)((2)*(20000000/4000.0)));
 
-WriteCmdXLCD(0x80);
-putsXLCD("Ref: ");
-WriteCmdXLCD(0x89);
-putsXLCD("Atual: ");
-WriteCmdXLCD(0xC3);
-putsXLCD("Razao: ");
-
+# 139
 while(1){
-long int resultado = 0;
-resultado = (valorconv * 4.89);
-mil = resultado / 1000;
-aux = resultado % 1000;
+if(contador == 100){
+contador = 0;
+mil = result / 1000;
+aux = result % 1000;
 cent = aux / 100;
 aux = aux % 100;
 dez = aux / 10;
 uni = aux % 10;
-
-
+mil2 = result2 / 1000;
+aux2 = result2 % 1000;
+cent2 = aux2 / 100;
+aux2 = aux2 % 100;
+dez2 = aux2 / 10;
+uni2 = aux2 % 10;
+WriteCmdXLCD(0x80);
+putsXLCD("Ta:");
+WriteDataXLCD(0x30 + mil);
+WriteDataXLCD(',');
+WriteDataXLCD(0x30 + cent);
+WriteDataXLCD(0x30 + dez);
+WriteDataXLCD(0x30 + uni);
+WriteCmdXLCD(0x88);
+putsXLCD("Tr:");
+WriteDataXLCD(0x30 + mil2);
+WriteDataXLCD(',');
+WriteDataXLCD(0x30 + cent2);
+WriteDataXLCD(0x30 + dez2);
+WriteDataXLCD(0x30 + uni2);
+}
 }
 
 }
