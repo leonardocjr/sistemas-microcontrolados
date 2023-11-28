@@ -40,18 +40,19 @@ void interrupt low_priority LowPriorityISR(void) {
     if(leiturapotenciometro){
         leiturapotenciometro = 0;
         result2 = 4.89*valorconv;
+        result2 = 35*(result2*3); // conversao no input
     } else {
         result = valorconv*4.89;
     }
     contador++;
+    dc = (result2-result);
     duty = dconst*dc;
-    dc = (result2-result)*100;
 }
 
 void main(void) {
     int cent,aux,dez,uni;
     int cent2,aux2,dez2,uni2;
-    int cent3,aux3,dez3,uni3;
+    int result3,cent3,aux3,dez3,uni3;
     //Configuracao entradas e saidas
     TRISA = 0xFF; // RA0 e RA3 como entradas
     TRISC = 0x00; // RC1 e RC2 como saidas
@@ -139,6 +140,7 @@ void main(void) {
     while(1){
             if(contador == 100){
                 contador = 0;
+                result3 = dc*100;
                 aux = result % 1000;
                 cent = aux / 100;
                 aux = aux % 100;
@@ -163,8 +165,8 @@ void main(void) {
                 putcXLCD(0x30 + uni2);
                 WriteCmdXLCD(0xC3);
                 putsXLCD("Razao:");
-                cent3 = dc / 100;
-                aux3 = dc % 100;
+                cent3 = result3 / 100;
+                aux3 = result3 % 100;
                 dez3 = aux3 / 10;
                 uni3 = aux3 % 10;
                 putcXLCD(0x30 + cent3);
