@@ -10,46 +10,48 @@
 unsigned char contador = 0;
 unsigned long int result = 0;
 unsigned long int result2 = 0;
-unsigned long int temp = 0;
+unsigned long int dc = 0;
 unsigned int valorconv = 0;
 int dc = 0; // *porcentagem
-int duty = 768*0, leiturapotenciometro = 0;
+unsigned int dconst = 768; //(PR2+1)*4
+int duty = 0, leiturapotenciometro = 0;
 // 1500hz
 void interrupt HighPriorityISR(void){
     INTCONbits.TMR0IF = 0; // limpa a flag
     TMR0L = 100;
     ADCON0bits.GO_DONE = 1;
-    if(contador == 100){//30Hz
-        contador = 0;
+    if(contador == 100){
+        contador = 1;
         leiturapotenciometro = 1;
-        /*ADCON0bits.CHS1 = 1;
+        ADCON0bits.CHS1 = 1;
         ADCON0bits.CHS0 = 1;
-        ADCON0bits.GO_DONE = 1;*/
+        ADCON0bits.GO_DONE = 1;
         //Voltar para o AN0
-    }/*else { 
+    }else { 
         ADCON0bits.CHS1 = 0;
         ADCON0bits.CHS0 = 0;
         ADCON0bits.GO_DONE = 1; // INICIA a conversao
-    }*/
+    }
 }
 
 void interrupt low_priority LowPriorityISR(void) {
     PIR1bits.ADIF = 0;
     valorconv = 256 * ADRESH + ADRESL;
-    contador++;
     if(leiturapotenciometro){
         leiturapotenciometro = 0;
         result2 = 4.89*valorconv;
-        //result2 = result2*0.01;
     } else {
         result = valorconv*4.89;
-        //result = result*0.01;
     }
+    contador++;
+    duty = dconst*dc;
+    dc = (result2-result)*100;
 }
 
 void main(void) {
-    int mil,cent,aux,dez,uni;
-    int mil2,cent2,aux2,dez2,uni2;
+    int cent,aux,dez,uni;
+    int cent2,aux2,dez2,uni2;
+    int cent3,aux3,dez3,uni3;
     //Configuracao entradas e saidas
     TRISA = 0xFF; // RA0 e RA3 como entradas
     TRISC = 0x00; // RC1 e RC2 como saidas
@@ -86,8 +88,8 @@ void main(void) {
     //Configura o A/D estar no RA0/AN0
     ADCON0bits.CHS3 = 0;
     ADCON0bits.CHS2 = 0;
-    ADCON0bits.CHS1 = 1;
-    ADCON0bits.CHS0 = 1;
+    ADCON0bits.CHS1 = 0;
+    ADCON0bits.CHS0 = 0;
     ADCON0bits.ADON = 1;
     
     // Configuracao e habilita interrupcoes globais
@@ -110,7 +112,6 @@ void main(void) {
     T0CON = 0b11010101; // timer on, 8 bits, clock interno, borda de subida, pre scaler de 64
     TRISAbits.TRISA0 = 1; // input
     ADCON1 = 0b00001011;
-    //ADCON0 = 0b00000001;
     ADCON2 = 0b10010101; // justifica a direita
     INTCONbits.TMR0IF = 0; // zera flag
     INTCONbits.TMR0IE = 1; // habilita interrupcao do timer
@@ -133,19 +134,16 @@ void main(void) {
 
     //WriteCmdXLCD(0x89);
     //putsXLCD("Atual: ");
-    //WriteCmdXLCD(0xC3);
-    //putsXLCD("Razao: ");
+
     
     while(1){
             if(contador == 100){
                 contador = 0;
-                mil = result / 1000;
                 aux = result % 1000;
                 cent = aux / 100;
                 aux = aux % 100;
                 dez = aux / 10;
                 uni = aux % 10;
-                mil2 = result2 / 1000;
                 aux2 = result2 % 1000;
                 cent2 = aux2 / 100;
                 aux2 = aux2 % 100;
@@ -153,19 +151,27 @@ void main(void) {
                 uni2 = aux2 % 10;
                 WriteCmdXLCD(0x80);
                 putsXLCD("Ta:");
-                putcXLCD(0x30 + mil);
-                putcXLCD(',');
                 putcXLCD(0x30 + cent);
                 putcXLCD(0x30 + dez);
-                putcXLCD(0x30 + uni);
-                WriteCmdXLCD(0x88);
-                putsXLCD("Tr:");
-                putcXLCD(0x30 + mil2);
                 putcXLCD(',');
+                putcXLCD(0x30 + uni);
+                WriteCmdXLCD(0x89);
+                putsXLCD("Tr:");
                 putcXLCD(0x30 + cent2);
                 putcXLCD(0x30 + dez2);
+                putcXLCD(',');
                 putcXLCD(0x30 + uni2);
+                WriteCmdXLCD(0xC3);
+                putsXLCD("Razao:");
+                cent3 = dc / 100;
+                aux3 = dc % 100;
+                dez3 = aux3 / 10;
+                uni3 = aux3 % 10;
+                putcXLCD(0x30 + cent3);
+                putcXLCD(0x30 + dez3);
+                putcXLCD(',');
+                putcXLCD(0x30 + uni3);
+                putcXLCD('%');
             }
     }
-    
 }
