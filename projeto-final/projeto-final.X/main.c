@@ -7,26 +7,32 @@
 #pragma config DEBUG = ON // Habilita debug
 #pragma config MCLRE = ON // Habilita MCLR
 #define _XTAL_FREQ 20000000 // uC opera com cristal de 20 MHz
+#pragma config CCP2MX = ON // Pino RC1 utilizado em CCP2
+
 unsigned char contador = 0;
 unsigned long int result = 0;
 unsigned long int result2 = 0;
-unsigned int valorconv = 0;
-unsigned long int dc = 0; // *porcentagem
+unsigned long int valorconv = 0;
 unsigned int dconst = 768; //(PR2+1)*4
-unsigned int duty = 768, leiturapotenciometro = 0;
-// 1500hz
-void interrupt HighPriorityISR(void){
+
+unsigned long int dc = 0;
+unsigned long int vent = 0;
+unsigned long int pot = 0;
+unsigned int leiturapotenciometro = 0;
+unsigned int temp = 350;
+
+void interrupt HighPriorityISR(void) {
     INTCONbits.TMR0IF = 0; // limpa a flag
     TMR0L = 100;
     ADCON0bits.GO_DONE = 1;
-    if(contador == 100){
+    if (contador == 100) { // 30Hz
         contador = 1;
         leiturapotenciometro = 1;
         ADCON0bits.CHS1 = 1;
         ADCON0bits.CHS0 = 1;
         ADCON0bits.GO_DONE = 1;
         //Voltar para o AN0
-    }else { 
+    } else {
         ADCON0bits.CHS1 = 0;
         ADCON0bits.CHS0 = 0;
         ADCON0bits.GO_DONE = 1; // INICIA a conversao
@@ -37,37 +43,48 @@ void interrupt low_priority LowPriorityISR(void) {
     PIR1bits.ADIF = 0;
     contador++;
     valorconv = 256 * ADRESH + ADRESL;
-    if(leiturapotenciometro){
+    if (leiturapotenciometro) {
         leiturapotenciometro = 0;
-        result2 = 4.887585533*valorconv;
-        result2 = result2*0.03; //(30/1000)
-        result2 = 350+result2; // conversao no input
+        result2 = valorconv; // 0 a 1023
+        CCPR2L = (char) pot >> 2;
+        CCP2CONbits.DC2B1 = (pot >> 1) % 2;
+        CCP2CONbits.DC2B0 = pot % 2;
     } else {
-        result = valorconv*4.887585533;
+        result = valorconv * 4.887585533;
     }
-    
+
+    if (INTCON3bits.INT1IF) {
+        INTCON3bits.INT1IF = 0; // Limpa flag do INT1
+        if (temp < 500)
+            temp=temp+10;
+    }
+    if (INTCON3bits.INT2IF) {
+        INTCON3bits.INT2IF = 0; // Limpa flag do INT2
+        if (temp > 350)
+            temp=temp-10;
+        }
 }
 
 void main(void) {
-    int cent,aux,dez,uni;
-    int mil2,cent2,aux2,dez2,uni2;
-    int result3,cent3,aux3,dez3,uni3;
+    int cent, aux, dez, uni;
+    int dez2, uni2;
+    int porcentagem, cent3, aux3, dez3, uni3;
     //Configuracao entradas e saidas
     TRISA = 0xFF; // RA0 e RA3 como entradas
     TRISC = 0x00; // RC1 e RC2 como saidas
     TRISB = 0XFF; // RB0 e RB1 como entradas
-    
+
     //Configuração para o algoritmo de variação da razão cíclica (CCP1)
     CCP1CONbits.CCP1M3 = 1;
     CCP1CONbits.CCP1M2 = 1;
     CCP1CONbits.CCP1M1 = 0;
     CCP1CONbits.CCP1M0 = 0;
-    
+
     // Configuracao timer 2 e postscale
     T2CONbits.T2OUTPS3 = 0;
     T2CONbits.T2OUTPS2 = 0;
     T2CONbits.T2OUTPS1 = 0;
-    T2CONbits.T2OUTPS0 = 0; 
+    T2CONbits.T2OUTPS0 = 0;
     T2CONbits.TMR2ON = 1;
     T2CONbits.T2CKPS1 = 0;
     T2CONbits.T2CKPS0 = 1;
@@ -75,29 +92,29 @@ void main(void) {
     // (2^8)*(200*(10^-9))*4
     // PR2 = (1/6500)/(200*(10^-9)*4)-1 = 191
     PR2 = 191;
-    
-    CCPR1L = (char)(duty >> 2);
-    CCP1CONbits.DC1B0 = duty%2;
-    CCP1CONbits.DC1B1 = (duty >> 1)%2;
+
+    CCPR1L = (char) (vent >> 2);
+    CCP1CONbits.DC1B0 = vent % 2;
+    CCP1CONbits.DC1B1 = (vent >> 1) % 2;
 
     // Configuracao conversor A/D
     PIE1bits.ADIE = 1; // ativa o bit de interrupcao
     PIR1bits.ADIF = 0; // limpa a flag
     IPR1bits.ADIP = 0; // prioridade baixa do A/D
-    
+
     //Configura o A/D estar no RA0/AN0
     ADCON0bits.CHS3 = 0;
     ADCON0bits.CHS2 = 0;
     ADCON0bits.CHS1 = 0;
     ADCON0bits.CHS0 = 0;
     ADCON0bits.ADON = 1;
-    
+
     // Configuracao e habilita interrupcoes globais
-    RCONbits.IPEN = 1;    // Habilitar niveis prioridades de interrupcao
-    INTCONbits.GIEH = 1;   // Habilitar interrupcoes globais
-    INTCONbits.GIEL = 1;  // Habilitar interrupcoes de periféricos
-    
-    // Configurar interrupcoes externas INT1 e INT2
+    RCONbits.IPEN = 1; // Habilitar niveis prioridades de interrupcao
+    INTCONbits.GIEH = 1; // Habilitar interrupcoes globais
+    INTCONbits.GIEL = 1; // Habilitar interrupcoes de periféricos
+
+    // Configurar interrupcoes externas INT1 (RB1) e INT2 (RB2)
     INTCON3bits.INT1IE = 1; // Habilitar INT1
     INTCON3bits.INT2IE = 1; // Habilitar INT2
     INTCON2bits.INTEDG1 = 0; // Configurar borda de descida para INT1
@@ -106,7 +123,7 @@ void main(void) {
     INTCON3bits.INT2IF = 0; // Limpar flag INT2
     INTCON3bits.INT1IP = 0; // Baixa do INT1 prioridade
     INTCON3bits.INT2IP = 0; // Baixa do INT2 prioridade
-    
+
     // Configuracao do Timer0
     T0CON = 0b11000101; // timer on, 8 bits, clock interno, borda de subida, pre scaler de 64
     TMR0L = 100;
@@ -121,62 +138,74 @@ void main(void) {
     // O valor de TMR0 = 65536 - (Fosc / (4 * prescaler * Freq))
     //tmr0 = 65536 - (20000000 / (4 * 2 * 1500));
     TMR0L = 100;
-    
+
     //Configuração para o CCP2 em modo PWM
     CCP2CONbits.CCP2M3 = 1;
     CCP2CONbits.CCP2M2 = 1;
-    
+
+    pot = 537.6 + (0.22521994134897360703812316715543 * result2); // (((PR2+1)*4)-((PR2+1)*4)*0.7) / 1023
+    CCPR2L = (char) pot >> 2;
+    CCP2CONbits.DC2B1 = (pot >> 1) % 2;
+    CCP2CONbits.DC2B0 = pot % 2;
+
     //Inicialização do LCD
-    OpenXLCD(FOUR_BIT & LINES_5X7); 
-    WriteCmdXLCD(0x01); 
+    OpenXLCD(FOUR_BIT & LINES_5X7);
+    WriteCmdXLCD(0x01);
     __delay_ms(2);
 
 
     //WriteCmdXLCD(0x89);
     //putsXLCD("Atual: ");
 
-    
-    while(1){
-            if(contador == 100){
-                result3 = dc;
-                aux = result % 1000;
-                cent = aux / 100;
-                aux = aux % 100;
-                dez = aux / 10;
-                uni = aux % 10;
-                aux2 = result2 % 1000;
-                cent2 = aux2 / 100;
-                aux2 = aux2 % 100;
-                dez2 = aux2 / 10;
-                uni2 = aux2 % 10;
-                WriteCmdXLCD(0x80);
-                putsXLCD("Ta:");
-                putcXLCD(0x30 + cent);
-                putcXLCD(0x30 + dez);
-                putcXLCD(',');
-                putcXLCD(0x30 + uni);
-                WriteCmdXLCD(0x89);
-                putsXLCD("Tr:");
-                putcXLCD(0x30 + cent2);
-                putcXLCD(0x30 + dez2);
-                putcXLCD(',');
-                putcXLCD(0x30 + uni2);
-                dc = (result2-result);
-                if((dconst*dc)<0)
-                    duty = 0;
-                else
-                    duty = dconst*dc;
-                WriteCmdXLCD(0xC3);
-                putsXLCD("Razao:");
-                cent3 = dc / 100; // 043% cent 0 dez 4 uni 3
-                aux3 = dc % 100;
-                dez3 = aux3 / 10;
-                uni3 = aux3 % 10;
-                putcXLCD(0x30 + cent3);
-                putcXLCD(0x30 + dez3);
-                putcXLCD(0x30 + uni3);
-                //putcXLCD(',');
-                putcXLCD('%');
-            }
+
+    while (1) {
+        if (contador == 100) {
+            
+            pot = 537.6 + (0.22521994134897360703812316715543 * result2); // (((PR2+1)*4)-((PR2+1)*4)*0.7) / 1023
+            CCPR2L = (char) pot >> 2;
+            CCP2CONbits.DC2B1 = (pot >> 1) % 2;
+            CCP2CONbits.DC2B0 = pot % 2;
+            
+            cent = result / 100;
+            aux = result % 100;
+            dez = aux / 10;
+            uni = aux % 10;
+            putsXLCD("Ta:");
+            WriteCmdXLCD(0x80);
+            putcXLCD(0x30 + cent);
+            putcXLCD(0x30 + dez);
+            putcXLCD(',');
+            putcXLCD(0x30 + uni);
+            
+            dez2 = temp/10;
+            uni2 = temp%10;
+            WriteCmdXLCD(0x89);
+            putsXLCD("Tr:");
+            putcXLCD(0x30 + dez2);
+            putcXLCD(0x30 + uni2);
+            
+            dc = -(result-temp);
+            if(dc<0)
+                dc = 0;
+            else if(dc>1)
+                dc = 1;
+            
+            vent = dconst*dc;
+            CCPR1L = (char) (vent >> 2);
+            CCP1CONbits.DC1B0 = vent % 2;
+            CCP1CONbits.DC1B1 = (vent >> 1) % 2;
+            
+            porcentagem = dc*100;
+            WriteCmdXLCD(0xC3);
+            putsXLCD("Razao:");
+            cent3 = porcentagem / 100;
+            aux3 = porcentagem % 100;
+            dez3 = aux3 / 10;
+            uni3 = aux3 % 10;
+            putcXLCD(0x30 + cent3);
+            putcXLCD(0x30 + dez3);
+            putcXLCD(0x30 + uni3);
+            putcXLCD('%');
+        }
     }
 }
