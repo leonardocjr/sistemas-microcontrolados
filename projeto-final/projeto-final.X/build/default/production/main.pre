@@ -4852,42 +4852,48 @@ void putrsXLCD(const char *);
 unsigned char contador = 0;
 unsigned long int result = 0;
 unsigned long int result2 = 0;
-unsigned long int temp = 0;
 unsigned int valorconv = 0;
-int dc = 0;
-int duty = 768*0, leiturapotenciometro = 0;
+unsigned long int dc = 0;
+unsigned int dconst = 768;
+unsigned int duty = 768, leiturapotenciometro = 0;
 
 void interrupt HighPriorityISR(void){
 INTCONbits.TMR0IF = 0;
 TMR0L = 100;
 ADCON0bits.GO_DONE = 1;
 if(contador == 100){
-contador = 0;
+contador = 1;
 leiturapotenciometro = 1;
+ADCON0bits.CHS1 = 1;
+ADCON0bits.CHS0 = 1;
+ADCON0bits.GO_DONE = 1;
 
-# 29
+}else {
+ADCON0bits.CHS1 = 0;
+ADCON0bits.CHS0 = 0;
+ADCON0bits.GO_DONE = 1;
 }
-
-# 34
 }
 
 void interrupt low_priority LowPriorityISR(void) {
 PIR1bits.ADIF = 0;
-valorconv = 256 * ADRESH + ADRESL;
 contador++;
+valorconv = 256 * ADRESH + ADRESL;
 if(leiturapotenciometro){
 leiturapotenciometro = 0;
-result2 = 4.89*valorconv;
-
+result2 = 4.887585533*valorconv;
+result2 = result2*0.03;
+result2 = 350+result2;
 } else {
-result = valorconv*4.89;
-
+result = valorconv*4.887585533;
 }
+
 }
 
 void main(void) {
-int mil,cent,aux,dez,uni;
+int cent,aux,dez,uni;
 int mil2,cent2,aux2,dez2,uni2;
+int result3,cent3,aux3,dez3,uni3;
 
 TRISA = 0xFF;
 TRISC = 0x00;
@@ -4924,8 +4930,8 @@ IPR1bits.ADIP = 0;
 
 ADCON0bits.CHS3 = 0;
 ADCON0bits.CHS2 = 0;
-ADCON0bits.CHS1 = 1;
-ADCON0bits.CHS0 = 1;
+ADCON0bits.CHS1 = 0;
+ADCON0bits.CHS0 = 0;
 ADCON0bits.ADON = 1;
 
 
@@ -4944,11 +4950,10 @@ INTCON3bits.INT1IP = 0;
 INTCON3bits.INT2IP = 0;
 
 
+T0CON = 0b11000101;
 TMR0L = 100;
-T0CON = 0b11010101;
 TRISAbits.TRISA0 = 1;
 ADCON1 = 0b00001011;
-
 ADCON2 = 0b10010101;
 INTCONbits.TMR0IF = 0;
 INTCONbits.TMR0IE = 1;
@@ -4971,14 +4976,12 @@ _delay((unsigned long)((2)*(20000000/4000.0)));
 # 139
 while(1){
 if(contador == 100){
-contador = 0;
-mil = result / 1000;
+result3 = dc;
 aux = result % 1000;
 cent = aux / 100;
 aux = aux % 100;
 dez = aux / 10;
 uni = aux % 10;
-mil2 = result2 / 1000;
 aux2 = result2 % 1000;
 cent2 = aux2 / 100;
 aux2 = aux2 % 100;
@@ -4986,19 +4989,32 @@ dez2 = aux2 / 10;
 uni2 = aux2 % 10;
 WriteCmdXLCD(0x80);
 putsXLCD("Ta:");
-WriteDataXLCD(0x30 + mil);
-WriteDataXLCD(',');
 WriteDataXLCD(0x30 + cent);
 WriteDataXLCD(0x30 + dez);
-WriteDataXLCD(0x30 + uni);
-WriteCmdXLCD(0x88);
-putsXLCD("Tr:");
-WriteDataXLCD(0x30 + mil2);
 WriteDataXLCD(',');
+WriteDataXLCD(0x30 + uni);
+WriteCmdXLCD(0x89);
+putsXLCD("Tr:");
 WriteDataXLCD(0x30 + cent2);
 WriteDataXLCD(0x30 + dez2);
+WriteDataXLCD(',');
 WriteDataXLCD(0x30 + uni2);
-}
-}
+dc = (result2-result);
+if((dconst*dc)<0)
+duty = 0;
+else
+duty = dconst*dc;
+WriteCmdXLCD(0xC3);
+putsXLCD("Razao:");
+cent3 = dc / 100;
+aux3 = dc % 100;
+dez3 = aux3 / 10;
+uni3 = aux3 % 10;
+WriteDataXLCD(0x30 + cent3);
+WriteDataXLCD(0x30 + dez3);
+WriteDataXLCD(0x30 + uni3);
 
+WriteDataXLCD('%');
+}
+}
 }

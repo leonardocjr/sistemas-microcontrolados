@@ -10,11 +10,10 @@
 unsigned char contador = 0;
 unsigned long int result = 0;
 unsigned long int result2 = 0;
-unsigned long int dc = 0;
 unsigned int valorconv = 0;
-int dc = 0; // *porcentagem
+unsigned long int dc = 0; // *porcentagem
 unsigned int dconst = 768; //(PR2+1)*4
-int duty = 0, leiturapotenciometro = 0;
+unsigned int duty = 768, leiturapotenciometro = 0;
 // 1500hz
 void interrupt HighPriorityISR(void){
     INTCONbits.TMR0IF = 0; // limpa a flag
@@ -36,22 +35,22 @@ void interrupt HighPriorityISR(void){
 
 void interrupt low_priority LowPriorityISR(void) {
     PIR1bits.ADIF = 0;
+    contador++;
     valorconv = 256 * ADRESH + ADRESL;
     if(leiturapotenciometro){
         leiturapotenciometro = 0;
-        result2 = 4.89*valorconv;
-        result2 = 35*(result2*3); // conversao no input
+        result2 = 4.887585533*valorconv;
+        result2 = result2*0.03; //(30/1000)
+        result2 = 350+result2; // conversao no input
     } else {
-        result = valorconv*4.89;
+        result = valorconv*4.887585533;
     }
-    contador++;
-    dc = (result2-result);
-    duty = dconst*dc;
+    
 }
 
 void main(void) {
     int cent,aux,dez,uni;
-    int cent2,aux2,dez2,uni2;
+    int mil2,cent2,aux2,dez2,uni2;
     int result3,cent3,aux3,dez3,uni3;
     //Configuracao entradas e saidas
     TRISA = 0xFF; // RA0 e RA3 como entradas
@@ -109,8 +108,8 @@ void main(void) {
     INTCON3bits.INT2IP = 0; // Baixa do INT2 prioridade
     
     // Configuracao do Timer0
+    T0CON = 0b11000101; // timer on, 8 bits, clock interno, borda de subida, pre scaler de 64
     TMR0L = 100;
-    T0CON = 0b11010101; // timer on, 8 bits, clock interno, borda de subida, pre scaler de 64
     TRISAbits.TRISA0 = 1; // input
     ADCON1 = 0b00001011;
     ADCON2 = 0b10010101; // justifica a direita
@@ -139,8 +138,7 @@ void main(void) {
     
     while(1){
             if(contador == 100){
-                contador = 0;
-                result3 = dc*100;
+                result3 = dc;
                 aux = result % 1000;
                 cent = aux / 100;
                 aux = aux % 100;
@@ -163,16 +161,21 @@ void main(void) {
                 putcXLCD(0x30 + dez2);
                 putcXLCD(',');
                 putcXLCD(0x30 + uni2);
+                dc = (result2-result);
+                if((dconst*dc)<0)
+                    duty = 0;
+                else
+                    duty = dconst*dc;
                 WriteCmdXLCD(0xC3);
                 putsXLCD("Razao:");
-                cent3 = result3 / 100;
-                aux3 = result3 % 100;
+                cent3 = dc / 100; // 043% cent 0 dez 4 uni 3
+                aux3 = dc % 100;
                 dez3 = aux3 / 10;
                 uni3 = aux3 % 10;
                 putcXLCD(0x30 + cent3);
                 putcXLCD(0x30 + dez3);
-                putcXLCD(',');
                 putcXLCD(0x30 + uni3);
+                //putcXLCD(',');
                 putcXLCD('%');
             }
     }

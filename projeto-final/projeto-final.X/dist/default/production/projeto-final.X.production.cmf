@@ -11,49 +11,53 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\projeto-final.X.production.obj
-intcodelo CODE 0 18 18 168 1
-cinit CODE 0 122C 122C 2A 1
-intcode_body CODE 0 CFC CFC B4 1
-text0 CODE 0 80A 80A 30A 1
-text1 CODE 0 11F6 11F6 36 1
-text2 CODE 0 1134 1134 44 1
-text3 CODE 0 1086 1086 68 1
-text4 CODE 0 F90 F90 84 1
-text5 CODE 0 1014 1014 72 1
-text6 CODE 0 F0A F0A 86 1
-text7 CODE 0 E5E E5E AC 1
-text8 CODE 0 1178 1178 44 1
-text9 CODE 0 10EE 10EE 46 1
-text10 CODE 0 127A 127A 14 1
-text11 CODE 0 128E 128E 14 1
-text12 CODE 0 11BC 11BC 3A 1
-text13 CODE 0 12A2 12A2 A 1
-text15 CODE 0 1256 1256 24 1
-text16 CODE 0 B14 B14 F4 1
-text17 CODE 0 C08 C08 F4 1
-text18 CODE 0 DB0 DB0 AE 1
-cstackCOMRAM COMRAM 1 1 1 3B 1
-cstackBANK0 BANK0 1 60 60 3A 1
-temp COMRAM 1 46 46 1 1
-bssBANK0 BANK0 1 9A 9A B 1
-intcode CODE 0 8 8 6 1
-smallconst SMALLCONST 0 800 800 A 1
-bssCOMRAM COMRAM 1 3C 3C A 1
-$C:\Users\vitor\AppData\Local\Temp\sgck.obj
+$C:\Users\vitor\AppData\Local\Temp\shgs.obj
 idloc IDLOC 0 200000 200000 8 1
-init CODE 0 180 180 4 1
+init CODE 0 1E8 1E8 4 1
 reset_vec CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
+$dist/default/production\projeto-final.X.production.obj
+intcodelo CODE 0 18 18 1D0 1
+cinit CODE 0 121A 121A 4A 1
+intcode_body CODE 0 DC0 DC0 C0 1
+text0 CODE 0 812 812 3C6 1
+text1 CODE 0 136C 136C 36 1
+text2 CODE 0 12AA 12AA 44 1
+text3 CODE 0 13A2 13A2 28 1
+text4 CODE 0 1156 1156 68 1
+text5 CODE 0 1060 1060 84 1
+text6 CODE 0 10E4 10E4 72 1
+text7 CODE 0 FDA FDA 86 1
+text8 CODE 0 F2E F2E AC 1
+text9 CODE 0 12EE 12EE 44 1
+text10 CODE 0 1264 1264 46 1
+text11 CODE 0 13EE 13EE 14 1
+text12 CODE 0 1402 1402 14 1
+text13 CODE 0 1332 1332 3A 1
+text14 CODE 0 1416 1416 A 1
+text16 CODE 0 13CA 13CA 24 1
+text17 CODE 0 11BE 11BE 5C 1
+text18 CODE 0 BD8 BD8 F4 1
+text19 CODE 0 CCC CCC F4 1
+text20 CODE 0 E80 E80 AE 1
+cstackCOMRAM COMRAM 1 1 1 41 1
+cstackBANK0 BANK0 1 60 60 42 1
+temp COMRAM 1 4A 4A 1 1
+bssBANK0 BANK0 1 A2 A2 9 1
+intcode CODE 0 8 8 6 1
+smallconst SMALLCONST 0 800 800 12 1
+idataBANK0 CODE 0 1420 1420 4 1
+dataBANK0 BANK0 1 AB AB 4 1
+bssCOMRAM COMRAM 1 42 42 8 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM A5-7FF 1
+RAM AF-7FF 1
 SFR F60-FFF 1
-BANK0 A5-FF 1
+BANK0 AF-FF 1
 BANK1 100-1FF 1
 BANK2 200-2FF 1
 BANK3 300-3FF 1
@@ -63,19 +67,19 @@ BANK6 600-6FF 1
 BANK7 700-7FF 1
 CONST 4-7 1
 CONST E-17 1
-CONST 184-7FF 1
-CONST 12AC-7FFF 1
-STACK A5-7FF 1
-SMALLCONST 12AC-7FFF 1
+CONST 1EC-7FF 1
+CONST 1424-7FFF 1
+STACK AF-7FF 1
+SMALLCONST 1424-7FFF 1
 CODE 4-7 1
 CODE E-17 1
-CODE 184-7FF 1
-CODE 12AC-7FFF 1
-BIGRAM 47-5F 1
-BIGRAM A5-7FF 1
-COMRAM 47-5F 1
+CODE 1EC-7FF 1
+CODE 1424-7FFF 1
+BIGRAM 4B-5F 1
+BIGRAM AF-7FF 1
+COMRAM 4B-5F 1
 EEDATA F00000-F000FF 1
-MEDIUMCONST 12AC-7FFF 1
+MEDIUMCONST 1424-7FFF 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -94,413 +98,456 @@ $dist/default/production\projeto-final.X.production.obj
 18 intcodelo CODE >15:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
 6E intcodelo CODE >37:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
 70 intcodelo CODE >38:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-84 intcodelo CODE >39:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+74 intcodelo CODE >39:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
 86 intcodelo CODE >40:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
 8E intcodelo CODE >41:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
 96 intcodelo CODE >42:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-DE intcodelo CODE >44:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-E0 intcodelo CODE >45:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-128 intcodelo CODE >47:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-128 intcodelo CODE >48:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+DE intcodelo CODE >43:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+12E intcodelo CODE >44:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+146 intcodelo CODE >45:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+148 intcodelo CODE >46:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+190 intcodelo CODE >47:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+190 intcodelo CODE >49:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
 8 intcode CODE >86:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
 8 intcode CODE >18:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-CFC intcode_body CODE >18:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-D46 intcode_body CODE >19:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-D48 intcode_body CODE >20:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-D4C intcode_body CODE >21:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-D4E intcode_body CODE >22:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-D58 intcode_body CODE >23:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-D5C intcode_body CODE >24:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-D64 intcode_body CODE >29:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-D64 intcode_body CODE >34:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-DB0 text18 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-DB0 text18 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-DC0 text18 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-DCE text18 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-DCE text18 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-DD0 text18 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-DD8 text18 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-DD8 text18 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-DF6 text18 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-DF6 text18 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-DF8 text18 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E04 text18 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E0C text18 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E0C text18 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E2A text18 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E2A text18 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E2C text18 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E34 text18 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E34 text18 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E3E text18 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E40 text18 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E42 text18 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E46 text18 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E4A text18 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E4E text18 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-E50 text18 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
-C08 text17 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C08 text17 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C22 text17 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C30 text17 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C4A text17 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C58 text17 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C5E text17 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C62 text17 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C66 text17 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C6A text17 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C6C text17 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C6E text17 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C7A text17 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C86 text17 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C8A text17 CODE >135:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C8A text17 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C8E text17 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-C9A text17 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-CA2 text17 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-CAA text17 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-CAE text17 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-CB2 text17 CODE >144:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-CB2 text17 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-CB6 text17 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-CC2 text17 CODE >147:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-CCA text17 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-CD2 text17 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-CD6 text17 CODE >156:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
-B14 text16 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-B14 text16 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-B2E text16 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-B40 text16 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-B66 text16 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-B68 text16 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-B74 text16 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-B82 text16 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-B86 text16 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-B8A text16 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-B94 text16 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BA6 text16 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BB0 text16 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BB4 text16 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BB6 text16 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BBC text16 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BCE text16 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BCE text16 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BD8 text16 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BDA text16 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BDA text16 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BE0 text16 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BE6 text16 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-BF6 text16 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
-1256 text15 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
-1256 text15 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
-12A2 text13 CODE >12:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-12A2 text13 CODE >14:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-12AA text13 CODE >15:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11BC text12 CODE >227:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11BC text12 CODE >229:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11BE text12 CODE >230:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11C0 text12 CODE >231:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11C4 text12 CODE >232:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11C6 text12 CODE >233:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11CA text12 CODE >249:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11CE text12 CODE >254:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11D0 text12 CODE >255:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11D4 text12 CODE >256:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11D6 text12 CODE >257:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11DA text12 CODE >258:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11DC text12 CODE >259:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11DE text12 CODE >260:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11E0 text12 CODE >261:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11E2 text12 CODE >262:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11E2 text12 CODE >264:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11E4 text12 CODE >265:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11E8 text12 CODE >266:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11EA text12 CODE >267:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11EE text12 CODE >268:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11F0 text12 CODE >269:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11F2 text12 CODE >270:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-128E text11 CODE >17:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-128E text11 CODE >19:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-12A0 text11 CODE >20:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-127A text10 CODE >22:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-127A text10 CODE >24:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-128C text10 CODE >25:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-10EE text9 CODE >171:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-10F2 text9 CODE >186:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-10F6 text9 CODE >187:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-10FA text9 CODE >188:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1104 text9 CODE >194:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1106 text9 CODE >195:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1108 text9 CODE >196:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-110C text9 CODE >197:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-110E text9 CODE >198:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1112 text9 CODE >199:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1114 text9 CODE >201:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1118 text9 CODE >202:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1122 text9 CODE >207:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1126 text9 CODE >208:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1128 text9 CODE >209:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-112C text9 CODE >210:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-112E text9 CODE >212:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1178 text8 CODE >388:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-117C text8 CODE >403:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1180 text8 CODE >404:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1184 text8 CODE >405:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-118C text8 CODE >411:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-118E text8 CODE >412:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1190 text8 CODE >413:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1194 text8 CODE >414:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1196 text8 CODE >415:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-119A text8 CODE >416:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-119C text8 CODE >418:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11A0 text8 CODE >419:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11AA text8 CODE >424:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11AE text8 CODE >425:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11B0 text8 CODE >426:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11B4 text8 CODE >427:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11B6 text8 CODE >429:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E5E text7 CODE >41:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E62 text7 CODE >50:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E66 text7 CODE >51:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E6A text7 CODE >57:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E6C text7 CODE >58:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E6E text7 CODE >59:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E70 text7 CODE >60:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E72 text7 CODE >61:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E74 text7 CODE >62:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E76 text7 CODE >65:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E7A text7 CODE >67:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E80 text7 CODE >68:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E84 text7 CODE >69:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E88 text7 CODE >70:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E8E text7 CODE >71:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E92 text7 CODE >72:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E96 text7 CODE >73:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-E9C text7 CODE >74:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-EA6 text7 CODE >79:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-EB0 text7 CODE >80:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-EB8 text7 CODE >83:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-EC2 text7 CODE >84:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-EC8 text7 CODE >85:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-ED2 text7 CODE >86:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-ED8 text7 CODE >89:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-EE2 text7 CODE >90:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-EE8 text7 CODE >93:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-EF2 text7 CODE >94:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-EF8 text7 CODE >97:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-F02 text7 CODE >98:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-F0A text6 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F0A text6 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F10 text6 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F14 text6 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F1C text6 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F20 text6 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F20 text6 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F24 text6 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F2C text6 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F30 text6 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F30 text6 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F38 text6 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F40 text6 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F44 text6 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F46 text6 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F4C text6 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F4E text6 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F4E text6 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F52 text6 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F58 text6 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F64 text6 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F6C text6 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F6E text6 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F6E text6 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F74 text6 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F78 text6 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F7E text6 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-F86 text6 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
-1014 text5 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-1014 text5 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-101A text5 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-101E text5 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-1026 text5 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-102A text5 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-102A text5 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-102E text5 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-1036 text5 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-103E text5 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-1042 text5 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-1044 text5 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-104A text5 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-104C text5 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-104C text5 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-1050 text5 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-105C text5 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-1064 text5 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-106A text5 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-106E text5 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-1074 text5 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-107C text5 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
-F90 text4 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-F90 text4 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FA2 text4 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FAE text4 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FB2 text4 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FB4 text4 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FBE text4 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FC0 text4 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FC0 text4 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FC4 text4 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FCE text4 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FE2 text4 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FF2 text4 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FF4 text4 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FF4 text4 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-FFE text4 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-1002 text4 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-1012 text4 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
-1086 text3 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-1086 text3 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-1094 text3 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-1098 text3 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-109A text3 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-10A4 text3 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-10A6 text3 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-10A6 text3 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-10AA text3 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-10BE text3 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-10CE text3 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-10D8 text3 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-10DC text3 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-10EC text3 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
-1134 text2 CODE >449:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1138 text2 CODE >464:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-113C text2 CODE >465:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1140 text2 CODE >466:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1148 text2 CODE >472:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-114A text2 CODE >473:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-114C text2 CODE >474:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1150 text2 CODE >475:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1152 text2 CODE >476:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1156 text2 CODE >477:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1158 text2 CODE >479:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-115C text2 CODE >480:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1166 text2 CODE >485:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-116A text2 CODE >486:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-116C text2 CODE >487:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1170 text2 CODE >488:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1172 text2 CODE >490:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11F6 text1 CODE >510:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11F6 text1 CODE >512:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-11F8 text1 CODE >514:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1202 text1 CODE >515:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1212 text1 CODE >516:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1218 text1 CODE >512:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-1218 text1 CODE >517:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
-80A text0 CODE >50:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-80A text0 CODE >54:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-80C text0 CODE >55:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-810 text0 CODE >56:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-812 text0 CODE >59:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-814 text0 CODE >60:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-816 text0 CODE >61:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-818 text0 CODE >62:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-81A text0 CODE >65:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-81C text0 CODE >66:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-81E text0 CODE >67:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-820 text0 CODE >68:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-822 text0 CODE >69:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-824 text0 CODE >70:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-826 text0 CODE >71:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-828 text0 CODE >75:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-82C text0 CODE >77:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-846 text0 CODE >78:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-85A text0 CODE >79:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-876 text0 CODE >82:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-878 text0 CODE >83:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-87A text0 CODE >84:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-87C text0 CODE >87:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-87E text0 CODE >88:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-880 text0 CODE >89:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-882 text0 CODE >90:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-884 text0 CODE >91:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-886 text0 CODE >94:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-888 text0 CODE >95:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-88A text0 CODE >96:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-88C text0 CODE >99:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-88E text0 CODE >100:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-890 text0 CODE >101:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-892 text0 CODE >102:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-894 text0 CODE >103:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-896 text0 CODE >104:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-898 text0 CODE >105:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-89A text0 CODE >106:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-89C text0 CODE >109:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8A0 text0 CODE >110:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+DC0 intcode_body CODE >18:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E0A intcode_body CODE >19:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E0C intcode_body CODE >20:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E10 intcode_body CODE >21:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E12 intcode_body CODE >22:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E1C intcode_body CODE >23:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E20 intcode_body CODE >24:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E28 intcode_body CODE >25:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E2A intcode_body CODE >26:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E2C intcode_body CODE >27:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E2E intcode_body CODE >29:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E2E intcode_body CODE >30:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E30 intcode_body CODE >31:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E32 intcode_body CODE >32:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E34 intcode_body CODE >34:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+E80 text20 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E80 text20 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E90 text20 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E9E text20 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+E9E text20 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EA0 text20 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EA8 text20 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EA8 text20 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EC6 text20 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EC6 text20 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EC8 text20 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+ED4 text20 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EDC text20 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EDC text20 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EFA text20 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EFA text20 CODE >76:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+EFC text20 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+F04 text20 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+F04 text20 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+F0E text20 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+F10 text20 CODE >80:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+F12 text20 CODE >81:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+F16 text20 CODE >82:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+F1A text20 CODE >83:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+F1E text20 CODE >84:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+F20 text20 CODE >85:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\float.c
+CCC text19 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+CCC text19 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+CE6 text19 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+CF4 text19 CODE >69:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D0E text19 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D1C text19 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D22 text19 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D26 text19 CODE >73:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D2A text19 CODE >74:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D2E text19 CODE >75:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D30 text19 CODE >77:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D32 text19 CODE >78:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D3E text19 CODE >79:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D4A text19 CODE >134:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D4E text19 CODE >135:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D4E text19 CODE >136:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D52 text19 CODE >137:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D5E text19 CODE >138:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D66 text19 CODE >139:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D6E text19 CODE >140:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D72 text19 CODE >143:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D76 text19 CODE >144:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D76 text19 CODE >145:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D7A text19 CODE >146:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D86 text19 CODE >147:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D8E text19 CODE >148:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D96 text19 CODE >149:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+D9A text19 CODE >156:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\ftmul.c
+BD8 text18 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+BD8 text18 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+BF2 text18 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C04 text18 CODE >51:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C2A text18 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C2C text18 CODE >53:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C38 text18 CODE >54:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C46 text18 CODE >55:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C4A text18 CODE >56:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C4E text18 CODE >57:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C58 text18 CODE >58:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C6A text18 CODE >60:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C74 text18 CODE >61:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C78 text18 CODE >62:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C7A text18 CODE >63:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C80 text18 CODE >64:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C92 text18 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C92 text18 CODE >66:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C9C text18 CODE >67:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C9E text18 CODE >65:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+C9E text18 CODE >68:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+CA4 text18 CODE >70:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+CAA text18 CODE >71:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+CBA text18 CODE >72:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\fttol.c
+11BE text17 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lltoft.c
+11BE text17 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lltoft.c
+11C2 text17 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lltoft.c
+11C4 text17 CODE >42:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lltoft.c
+11CE text17 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lltoft.c
+11D0 text17 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lltoft.c
+11D0 text17 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lltoft.c
+11F4 text17 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lltoft.c
+13CA text16 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
+13CA text16 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lwtoft.c
+1416 text14 CODE >12:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1416 text14 CODE >14:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+141E text14 CODE >15:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1332 text13 CODE >227:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1332 text13 CODE >229:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1334 text13 CODE >230:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1336 text13 CODE >231:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+133A text13 CODE >232:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+133C text13 CODE >233:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1340 text13 CODE >249:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1344 text13 CODE >254:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1346 text13 CODE >255:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+134A text13 CODE >256:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+134C text13 CODE >257:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1350 text13 CODE >258:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1352 text13 CODE >259:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1354 text13 CODE >260:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1356 text13 CODE >261:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1358 text13 CODE >262:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1358 text13 CODE >264:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+135A text13 CODE >265:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+135E text13 CODE >266:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1360 text13 CODE >267:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1364 text13 CODE >268:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1366 text13 CODE >269:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1368 text13 CODE >270:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1402 text12 CODE >17:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1402 text12 CODE >19:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1414 text12 CODE >20:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+13EE text11 CODE >22:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+13EE text11 CODE >24:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1400 text11 CODE >25:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1264 text10 CODE >171:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1268 text10 CODE >186:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+126C text10 CODE >187:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1270 text10 CODE >188:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+127A text10 CODE >194:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+127C text10 CODE >195:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+127E text10 CODE >196:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1282 text10 CODE >197:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1284 text10 CODE >198:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1288 text10 CODE >199:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+128A text10 CODE >201:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+128E text10 CODE >202:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1298 text10 CODE >207:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+129C text10 CODE >208:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+129E text10 CODE >209:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12A2 text10 CODE >210:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12A4 text10 CODE >212:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12EE text9 CODE >388:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12F2 text9 CODE >403:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12F6 text9 CODE >404:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12FA text9 CODE >405:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1302 text9 CODE >411:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1304 text9 CODE >412:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1306 text9 CODE >413:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+130A text9 CODE >414:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+130C text9 CODE >415:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1310 text9 CODE >416:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1312 text9 CODE >418:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1316 text9 CODE >419:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1320 text9 CODE >424:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1324 text9 CODE >425:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1326 text9 CODE >426:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+132A text9 CODE >427:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+132C text9 CODE >429:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F2E text8 CODE >41:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F32 text8 CODE >50:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F36 text8 CODE >51:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F3A text8 CODE >57:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F3C text8 CODE >58:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F3E text8 CODE >59:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F40 text8 CODE >60:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F42 text8 CODE >61:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F44 text8 CODE >62:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F46 text8 CODE >65:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F4A text8 CODE >67:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F50 text8 CODE >68:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F54 text8 CODE >69:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F58 text8 CODE >70:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F5E text8 CODE >71:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F62 text8 CODE >72:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F66 text8 CODE >73:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F6C text8 CODE >74:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F76 text8 CODE >79:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F80 text8 CODE >80:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F88 text8 CODE >83:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F92 text8 CODE >84:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+F98 text8 CODE >85:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+FA2 text8 CODE >86:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+FA8 text8 CODE >89:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+FB2 text8 CODE >90:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+FB8 text8 CODE >93:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+FC2 text8 CODE >94:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+FC8 text8 CODE >97:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+FD2 text8 CODE >98:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+FDA text7 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+FDA text7 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+FE0 text7 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+FE4 text7 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+FEC text7 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+FF0 text7 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+FF0 text7 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+FF4 text7 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+FFC text7 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1000 text7 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1000 text7 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1008 text7 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1010 text7 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1014 text7 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1016 text7 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+101C text7 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+101E text7 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+101E text7 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1022 text7 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1028 text7 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1034 text7 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+103C text7 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+103E text7 CODE >35:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+103E text7 CODE >36:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1044 text7 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1048 text7 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+104E text7 CODE >40:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+1056 text7 CODE >41:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awdiv.c
+10E4 text6 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+10E4 text6 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+10EA text6 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+10EE text6 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+10F6 text6 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+10FA text6 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+10FA text6 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+10FE text6 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+1106 text6 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+110E text6 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+1112 text6 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+1114 text6 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+111A text6 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+111C text6 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+111C text6 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+1120 text6 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+112C text6 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+1134 text6 CODE >29:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+113A text6 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+113E text6 CODE >32:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+1144 text6 CODE >33:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+114C text6 CODE >34:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\awmod.c
+1060 text5 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+1060 text5 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+1072 text5 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+107E text5 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+1082 text5 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+1084 text5 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+108E text5 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+1090 text5 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+1090 text5 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+1094 text5 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+109E text5 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+10B2 text5 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+10C2 text5 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+10C4 text5 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+10C4 text5 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+10CE text5 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+10D2 text5 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+10E2 text5 CODE >31:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\lldiv.c
+1156 text4 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+1156 text4 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+1164 text4 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+1168 text4 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+116A text4 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+1174 text4 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+1176 text4 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+1176 text4 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+117A text4 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+118E text4 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+119E text4 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+11A8 text4 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+11AC text4 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+11BC text4 CODE >26:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\llmod.c
+13A2 text3 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+13A2 text3 CODE >37:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+13B0 text3 CODE >38:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+13B8 text3 CODE >39:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+13C0 text3 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+12AA text2 CODE >449:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12AE text2 CODE >464:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12B2 text2 CODE >465:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12B6 text2 CODE >466:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12BE text2 CODE >472:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12C0 text2 CODE >473:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12C2 text2 CODE >474:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12C6 text2 CODE >475:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12C8 text2 CODE >476:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12CC text2 CODE >477:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12CE text2 CODE >479:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12D2 text2 CODE >480:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12DC text2 CODE >485:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12E0 text2 CODE >486:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12E2 text2 CODE >487:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12E6 text2 CODE >488:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+12E8 text2 CODE >490:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+136C text1 CODE >510:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+136C text1 CODE >512:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+136E text1 CODE >514:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1378 text1 CODE >515:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+1388 text1 CODE >516:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+138E text1 CODE >512:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+138E text1 CODE >517:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\nxlcd.c
+812 text0 CODE >51:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+812 text0 CODE >56:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+814 text0 CODE >57:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+818 text0 CODE >58:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+81A text0 CODE >61:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+81C text0 CODE >62:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+81E text0 CODE >63:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+820 text0 CODE >64:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+822 text0 CODE >67:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+824 text0 CODE >68:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+826 text0 CODE >69:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+828 text0 CODE >70:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+82A text0 CODE >71:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+82C text0 CODE >72:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+82E text0 CODE >73:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+830 text0 CODE >77:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+834 text0 CODE >79:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+84E text0 CODE >80:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+862 text0 CODE >81:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+87E text0 CODE >84:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+880 text0 CODE >85:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+882 text0 CODE >86:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+884 text0 CODE >89:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+886 text0 CODE >90:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+888 text0 CODE >91:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+88A text0 CODE >92:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+88C text0 CODE >93:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+88E text0 CODE >96:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+890 text0 CODE >97:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+892 text0 CODE >98:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+894 text0 CODE >101:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+896 text0 CODE >102:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+898 text0 CODE >103:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+89A text0 CODE >104:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+89C text0 CODE >105:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+89E text0 CODE >106:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8A0 text0 CODE >107:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8A2 text0 CODE >108:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
 8A4 text0 CODE >111:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8A6 text0 CODE >112:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8AA text0 CODE >114:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8AE text0 CODE >115:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8B0 text0 CODE >116:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8B2 text0 CODE >117:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8B4 text0 CODE >122:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8B8 text0 CODE >125:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8BA text0 CODE >126:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8BC text0 CODE >129:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8C2 text0 CODE >130:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8C8 text0 CODE >131:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8DA text0 CODE >139:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8DA text0 CODE >140:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8E4 text0 CODE >141:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-8E8 text0 CODE >142:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-914 text0 CODE >143:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-942 text0 CODE >144:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-960 text0 CODE >145:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-97E text0 CODE >146:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-99C text0 CODE >147:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-9BA text0 CODE >148:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-9E8 text0 CODE >149:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-A16 text0 CODE >150:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-A34 text0 CODE >151:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-A52 text0 CODE >152:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-A70 text0 CODE >153:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-A8E text0 CODE >154:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-A94 text0 CODE >155:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-AA2 text0 CODE >156:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-AAC text0 CODE >157:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-AB2 text0 CODE >158:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-ABC text0 CODE >159:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-AC6 text0 CODE >160:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-AD0 text0 CODE >161:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-AD6 text0 CODE >162:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-AE4 text0 CODE >163:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-AEE text0 CODE >164:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-AF4 text0 CODE >165:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-AFE text0 CODE >166:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-B08 text0 CODE >167:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-B12 text0 CODE >139:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
-122C cinit CODE >851:C:\Users\vitor\AppData\Local\Temp\sgck.
-122C cinit CODE >853:C:\Users\vitor\AppData\Local\Temp\sgck.
-122C cinit CODE >856:C:\Users\vitor\AppData\Local\Temp\sgck.
-122C cinit CODE >894:C:\Users\vitor\AppData\Local\Temp\sgck.
-1230 cinit CODE >895:C:\Users\vitor\AppData\Local\Temp\sgck.
-1232 cinit CODE >896:C:\Users\vitor\AppData\Local\Temp\sgck.
-1232 cinit CODE >897:C:\Users\vitor\AppData\Local\Temp\sgck.
-1234 cinit CODE >898:C:\Users\vitor\AppData\Local\Temp\sgck.
-1236 cinit CODE >899:C:\Users\vitor\AppData\Local\Temp\sgck.
-1238 cinit CODE >902:C:\Users\vitor\AppData\Local\Temp\sgck.
-123C cinit CODE >903:C:\Users\vitor\AppData\Local\Temp\sgck.
-123E cinit CODE >904:C:\Users\vitor\AppData\Local\Temp\sgck.
-123E cinit CODE >905:C:\Users\vitor\AppData\Local\Temp\sgck.
-1240 cinit CODE >906:C:\Users\vitor\AppData\Local\Temp\sgck.
-1242 cinit CODE >907:C:\Users\vitor\AppData\Local\Temp\sgck.
-1244 cinit CODE >913:C:\Users\vitor\AppData\Local\Temp\sgck.
-1244 cinit CODE >915:C:\Users\vitor\AppData\Local\Temp\sgck.
-1246 cinit CODE >916:C:\Users\vitor\AppData\Local\Temp\sgck.
-1248 cinit CODE >918:C:\Users\vitor\AppData\Local\Temp\sgck.
-124A cinit CODE >919:C:\Users\vitor\AppData\Local\Temp\sgck.
-124C cinit CODE >920:C:\Users\vitor\AppData\Local\Temp\sgck.
-124E cinit CODE >921:C:\Users\vitor\AppData\Local\Temp\sgck.
-1250 cinit CODE >922:C:\Users\vitor\AppData\Local\Temp\sgck.
-1252 cinit CODE >923:C:\Users\vitor\AppData\Local\Temp\sgck.
+8A8 text0 CODE >112:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8AC text0 CODE >113:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8AE text0 CODE >114:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8B2 text0 CODE >115:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8B6 text0 CODE >116:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8B8 text0 CODE >117:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8BA text0 CODE >118:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8BC text0 CODE >123:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8C0 text0 CODE >126:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8C2 text0 CODE >127:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8C4 text0 CODE >130:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8CA text0 CODE >131:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8D0 text0 CODE >132:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8E2 text0 CODE >139:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8E2 text0 CODE >140:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8EC text0 CODE >141:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+8F4 text0 CODE >142:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+920 text0 CODE >143:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+93E text0 CODE >144:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+95C text0 CODE >145:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+97A text0 CODE >146:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+998 text0 CODE >147:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+9C6 text0 CODE >148:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+9E4 text0 CODE >149:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A02 text0 CODE >150:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A20 text0 CODE >151:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A3E text0 CODE >152:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A44 text0 CODE >153:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A52 text0 CODE >154:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A5C text0 CODE >155:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A66 text0 CODE >156:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A6C text0 CODE >157:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A76 text0 CODE >158:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A7C text0 CODE >159:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A8A text0 CODE >160:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A94 text0 CODE >161:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+A9E text0 CODE >162:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+AA4 text0 CODE >163:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+AAE text0 CODE >164:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+AEA text0 CODE >168:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+B06 text0 CODE >169:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+B0C text0 CODE >170:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+B1A text0 CODE >171:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+B48 text0 CODE >172:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+B76 text0 CODE >173:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+B94 text0 CODE >174:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+BB2 text0 CODE >175:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+BBC text0 CODE >176:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+BC6 text0 CODE >177:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+BD0 text0 CODE >179:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+BD6 text0 CODE >139:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontrolados\projeto-final\projeto-final.X\main.c
+121A cinit CODE >878:C:\Users\vitor\AppData\Local\Temp\shgs.
+121A cinit CODE >880:C:\Users\vitor\AppData\Local\Temp\shgs.
+121A cinit CODE >883:C:\Users\vitor\AppData\Local\Temp\shgs.
+121A cinit CODE >928:C:\Users\vitor\AppData\Local\Temp\shgs.
+121C cinit CODE >929:C:\Users\vitor\AppData\Local\Temp\shgs.
+121E cinit CODE >930:C:\Users\vitor\AppData\Local\Temp\shgs.
+1220 cinit CODE >931:C:\Users\vitor\AppData\Local\Temp\shgs.
+1222 cinit CODE >932:C:\Users\vitor\AppData\Local\Temp\shgs.
+1224 cinit CODE >933:C:\Users\vitor\AppData\Local\Temp\shgs.
+1226 cinit CODE >934:C:\Users\vitor\AppData\Local\Temp\shgs.
+122A cinit CODE >935:C:\Users\vitor\AppData\Local\Temp\shgs.
+122E cinit CODE >936:C:\Users\vitor\AppData\Local\Temp\shgs.
+122E cinit CODE >937:C:\Users\vitor\AppData\Local\Temp\shgs.
+1230 cinit CODE >938:C:\Users\vitor\AppData\Local\Temp\shgs.
+1234 cinit CODE >939:C:\Users\vitor\AppData\Local\Temp\shgs.
+1236 cinit CODE >940:C:\Users\vitor\AppData\Local\Temp\shgs.
+1238 cinit CODE >941:C:\Users\vitor\AppData\Local\Temp\shgs.
+123A cinit CODE >945:C:\Users\vitor\AppData\Local\Temp\shgs.
+123E cinit CODE >946:C:\Users\vitor\AppData\Local\Temp\shgs.
+1240 cinit CODE >947:C:\Users\vitor\AppData\Local\Temp\shgs.
+1240 cinit CODE >948:C:\Users\vitor\AppData\Local\Temp\shgs.
+1242 cinit CODE >949:C:\Users\vitor\AppData\Local\Temp\shgs.
+1244 cinit CODE >950:C:\Users\vitor\AppData\Local\Temp\shgs.
+1246 cinit CODE >953:C:\Users\vitor\AppData\Local\Temp\shgs.
+124A cinit CODE >954:C:\Users\vitor\AppData\Local\Temp\shgs.
+124C cinit CODE >955:C:\Users\vitor\AppData\Local\Temp\shgs.
+124C cinit CODE >956:C:\Users\vitor\AppData\Local\Temp\shgs.
+124E cinit CODE >957:C:\Users\vitor\AppData\Local\Temp\shgs.
+1250 cinit CODE >958:C:\Users\vitor\AppData\Local\Temp\shgs.
+1252 cinit CODE >964:C:\Users\vitor\AppData\Local\Temp\shgs.
+1252 cinit CODE >966:C:\Users\vitor\AppData\Local\Temp\shgs.
+1254 cinit CODE >967:C:\Users\vitor\AppData\Local\Temp\shgs.
+1256 cinit CODE >969:C:\Users\vitor\AppData\Local\Temp\shgs.
+1258 cinit CODE >970:C:\Users\vitor\AppData\Local\Temp\shgs.
+125A cinit CODE >971:C:\Users\vitor\AppData\Local\Temp\shgs.
+125C cinit CODE >972:C:\Users\vitor\AppData\Local\Temp\shgs.
+125E cinit CODE >973:C:\Users\vitor\AppData\Local\Temp\shgs.
+1260 cinit CODE >974:C:\Users\vitor\AppData\Local\Temp\shgs.
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -515,23 +562,24 @@ B12 text0 CODE >139:C:\Users\vitor\OneDrive\햞ea de Trabalho\sistemas-microcontr
 %SYMTAB
 ___awdiv@counter 7B 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 WriteCmdXLCD@cmd 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\projeto-final.X.production.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\projeto-final.X.production.obj
 __Hspace_0 30000E 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-__Hspace_1 A5 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
+__Hspace_1 AF 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Hspace_2 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
+__HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\projeto-final.X.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\projeto-final.X.production.obj
-__end_of_LowPriorityISR 180 0 CODE 0 intcodelo dist/default/production\projeto-final.X.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\vitor\AppData\Local\Temp\sgck.obj
+__end_of_LowPriorityISR 1E8 0 CODE 0 intcodelo dist/default/production\projeto-final.X.production.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\vitor\AppData\Local\Temp\shgs.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\projeto-final.X.production.obj
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-_dc 42 0 COMRAM 1 bssCOMRAM dist/default/production\projeto-final.X.production.obj
+_dc A2 0 BANK0 1 bssBANK0 dist/default/production\projeto-final.X.production.obj
 __Lsmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\projeto-final.X.production.obj
-___sp 0 0 STACK 2 stack C:\Users\vitor\AppData\Local\Temp\sgck.obj
-_duty A2 0 BANK0 1 bssBANK0 dist/default/production\projeto-final.X.production.obj
-_main 80A 0 CODE 0 text0 dist/default/production\projeto-final.X.production.obj
-_temp 3C 0 COMRAM 1 bssCOMRAM dist/default/production\projeto-final.X.production.obj
-btemp 46 0 COMRAM 1 temp dist/default/production\projeto-final.X.production.obj
-start 180 0 CODE 0 init C:\Users\vitor\AppData\Local\Temp\sgck.obj
+___sp 0 0 STACK 2 stack C:\Users\vitor\AppData\Local\Temp\shgs.obj
+_duty AB 0 BANK0 1 dataBANK0 dist/default/production\projeto-final.X.production.obj
+_main 812 0 CODE 0 text0 dist/default/production\projeto-final.X.production.obj
+btemp 4A 0 COMRAM 1 temp dist/default/production\projeto-final.X.production.obj
+start 1E8 0 CODE 0 init C:\Users\vitor\AppData\Local\Temp\shgs.obj
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __size_of___awmod 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __size_of___ftmul 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
@@ -540,80 +588,85 @@ __size_of_main 0 0 ABS 0 - dist/default/production\projeto-final.X.production.ob
 __size_of___lldiv 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __size_of___llmod 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\projeto-final.X.production.obj
-__Hpowerup 180 0 CODE 0 powerup dist/default/production\projeto-final.X.production.obj
+?___wmul 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production\projeto-final.X.production.obj
+__Hpowerup 1E8 0 CODE 0 powerup dist/default/production\projeto-final.X.production.obj
 ___awmod@sign 7C 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\vitor\AppData\Local\Temp\sgck.obj
-intlevel0 0 0 CODE 0 text C:\Users\vitor\AppData\Local\Temp\sgck.obj
-intlevel1 0 0 CODE 0 text C:\Users\vitor\AppData\Local\Temp\sgck.obj
-intlevel2 0 0 CODE 0 text C:\Users\vitor\AppData\Local\Temp\sgck.obj
-intlevel3 0 0 CODE 0 text C:\Users\vitor\AppData\Local\Temp\sgck.obj
+__accesstop 60 0 ABS 0 - C:\Users\vitor\AppData\Local\Temp\shgs.obj
+intlevel0 0 0 CODE 0 text C:\Users\vitor\AppData\Local\Temp\shgs.obj
+intlevel1 0 0 CODE 0 text C:\Users\vitor\AppData\Local\Temp\shgs.obj
+intlevel2 0 0 CODE 0 text C:\Users\vitor\AppData\Local\Temp\shgs.obj
+intlevel3 0 0 CODE 0 text C:\Users\vitor\AppData\Local\Temp\shgs.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\projeto-final.X.production.obj
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\projeto-final.X.production.obj
-wtemp6 47 0 COMRAM 1 temp dist/default/production\projeto-final.X.production.obj
+wtemp6 4B 0 COMRAM 1 temp dist/default/production\projeto-final.X.production.obj
 ___llmod@divisor 7B 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\projeto-final.X.production.obj
-__end_of_HighPriorityISR DB0 0 CODE 0 intcode_body dist/default/production\projeto-final.X.production.obj
+__end_of_HighPriorityISR E80 0 CODE 0 intcode_body dist/default/production\projeto-final.X.production.obj
 ___awdiv@sign 7C 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\projeto-final.X.production.obj
-___ftmul@f1 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-___ftmul@f2 21 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+___ftmul@f1 24 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+___ftmul@f2 27 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+___wmul@multiplicand 79 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 _ADCON1 FC1 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 _ADCON2 FC0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 _ADRESH FC4 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 _ADRESL FC3 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-__end_of_DelayXLCD 128E 0 CODE 0 text10 dist/default/production\projeto-final.X.production.obj
+__end_of_DelayXLCD 1402 0 CODE 0 text11 dist/default/production\projeto-final.X.production.obj
 ___awdiv@dividend 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\vitor\AppData\Local\Temp\sgck.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\vitor\AppData\Local\Temp\sgck.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\vitor\AppData\Local\Temp\shgs.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\vitor\AppData\Local\Temp\shgs.obj
 __size_of_DelayXLCD 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 _CCPR1L FBE 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\projeto-final.X.production.obj
+__end_of___wmul 13CA 0 CODE 0 text3 dist/default/production\projeto-final.X.production.obj
 __size_of_BusyXLCD 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\projeto-final.X.production.obj
-main@aux 96 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-main@dez 8A 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-main@mil 86 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-main@uni 8C 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-___fttol@f1 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+main@aux 9E 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+main@dez 8C 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+main@uni 8E 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+___fttol@f1 33 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\projeto-final.X.production.obj
 __CFG_DEBUG$ON 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-__Hintcodelo 180 0 CODE 0 intcodelo dist/default/production\projeto-final.X.production.obj
+__Hintcodelo 1E8 0 CODE 0 intcodelo dist/default/production\projeto-final.X.production.obj
 ___awdiv@divisor 79 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __size_of___ftpack 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-__end_of___awdiv F90 0 CODE 0 text6 dist/default/production\projeto-final.X.production.obj
-__end_of___awmod 1086 0 CODE 0 text5 dist/default/production\projeto-final.X.production.obj
-__end_of___ftmul CFC 0 CODE 0 text17 dist/default/production\projeto-final.X.production.obj
-__end_of___fttol C08 0 CODE 0 text16 dist/default/production\projeto-final.X.production.obj
-_DelayXLCD 127A 0 CODE 0 text10 dist/default/production\projeto-final.X.production.obj
-__end_of___lldiv 1014 0 CODE 0 text4 dist/default/production\projeto-final.X.production.obj
-__end_of___llmod 10EE 0 CODE 0 text3 dist/default/production\projeto-final.X.production.obj
+__end_of___awdiv 1060 0 CODE 0 text7 dist/default/production\projeto-final.X.production.obj
+__end_of___awmod 1156 0 CODE 0 text6 dist/default/production\projeto-final.X.production.obj
+__end_of___ftmul DC0 0 CODE 0 text19 dist/default/production\projeto-final.X.production.obj
+__end_of___fttol CCC 0 CODE 0 text18 dist/default/production\projeto-final.X.production.obj
+_DelayXLCD 13EE 0 CODE 0 text11 dist/default/production\projeto-final.X.production.obj
+__end_of___lldiv 10E4 0 CODE 0 text5 dist/default/production\projeto-final.X.production.obj
+__end_of___llmod 11BE 0 CODE 0 text4 dist/default/production\projeto-final.X.production.obj
 _HighPriorityISR 8 0 CODE 0 intcode dist/default/production\projeto-final.X.production.obj
-_leiturapotenciometro 40 0 COMRAM 1 bssCOMRAM dist/default/production\projeto-final.X.production.obj
-_WriteDataXLCD 1134 0 CODE 0 text2 dist/default/production\projeto-final.X.production.obj
+_leiturapotenciometro 46 0 COMRAM 1 bssCOMRAM dist/default/production\projeto-final.X.production.obj
+_WriteDataXLCD 12AA 0 CODE 0 text2 dist/default/production\projeto-final.X.production.obj
+__size_of___lltoft 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 _INTCON2bits FF1 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 _INTCON3bits FF0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __size_of___lwtoft 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 ___lldiv@counter 83 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __Lintcodelo 18 0 CODE 0 intcodelo dist/default/production\projeto-final.X.production.obj
 OpenXLCD@lcdtype 78 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-_DelayFor18TCY 12A2 0 CODE 0 text13 dist/default/production\projeto-final.X.production.obj
-start_initialization 122C 0 CODE 0 cinit dist/default/production\projeto-final.X.production.obj
+_DelayFor18TCY 1416 0 CODE 0 text14 dist/default/production\projeto-final.X.production.obj
+start_initialization 121A 0 CODE 0 cinit dist/default/production\projeto-final.X.production.obj
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\projeto-final.X.production.obj
 _TRISAbits F92 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 _TRISEbits F96 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 ___lldiv@dividend 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 ___rparam_used 1 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-_BusyXLCD 11BC 0 CODE 0 text12 dist/default/production\projeto-final.X.production.obj
+_BusyXLCD 1332 0 CODE 0 text13 dist/default/production\projeto-final.X.production.obj
 __pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 _IPR1bits F9F 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-___fttol@exp1 3B 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-___fttol@lval 37 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-__end_of_BusyXLCD 11F6 0 CODE 0 text12 dist/default/production\projeto-final.X.production.obj
-___ftpack DB0 0 CODE 0 text18 dist/default/production\projeto-final.X.production.obj
-_result2 9A 0 BANK0 1 bssBANK0 dist/default/production\projeto-final.X.production.obj
+___fttol@exp1 41 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+___fttol@lval 3D 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+___lltoft@c 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+__end_of_BusyXLCD 136C 0 CODE 0 text13 dist/default/production\projeto-final.X.production.obj
+___ftpack E80 0 CODE 0 text20 dist/default/production\projeto-final.X.production.obj
+_result2 42 0 COMRAM 1 bssCOMRAM dist/default/production\projeto-final.X.production.obj
 ___ftpack@arg 13 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
 ___ftpack@exp 16 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-__end_of___ftpack E5E 0 CODE 0 text18 dist/default/production\projeto-final.X.production.obj
+__end_of___ftpack F2E 0 CODE 0 text20 dist/default/production\projeto-final.X.production.obj
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\projeto-final.X.production.obj
 __Hbank1 0 0 ABS 0 bank1 dist/default/production\projeto-final.X.production.obj
 __Hbank2 0 0 ABS 0 bank2 dist/default/production\projeto-final.X.production.obj
@@ -642,11 +695,12 @@ __Htext8 0 0 ABS 0 text8 dist/default/production\projeto-final.X.production.obj
 __Htext9 0 0 ABS 0 text9 dist/default/production\projeto-final.X.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\projeto-final.X.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\projeto-final.X.production.obj
-__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\vitor\AppData\Local\Temp\sgck.obj
+__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\vitor\AppData\Local\Temp\shgs.obj
+___lltoft 11BE 0 CODE 0 text17 dist/default/production\projeto-final.X.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production\projeto-final.X.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\projeto-final.X.production.obj
-___lwtoft 1256 0 CODE 0 text15 dist/default/production\projeto-final.X.production.obj
-_valorconv 44 0 COMRAM 1 bssCOMRAM dist/default/production\projeto-final.X.production.obj
+___lwtoft 13CA 0 CODE 0 text16 dist/default/production\projeto-final.X.production.obj
+_valorconv 48 0 COMRAM 1 bssCOMRAM dist/default/production\projeto-final.X.production.obj
 __Lbank0 0 0 ABS 0 bank0 dist/default/production\projeto-final.X.production.obj
 __Lbank1 0 0 ABS 0 bank1 dist/default/production\projeto-final.X.production.obj
 __Lbank2 0 0 ABS 0 bank2 dist/default/production\projeto-final.X.production.obj
@@ -674,100 +728,114 @@ __Ltext7 0 0 ABS 0 text7 dist/default/production\projeto-final.X.production.obj
 __Ltext8 0 0 ABS 0 text8 dist/default/production\projeto-final.X.production.obj
 __Ltext9 0 0 ABS 0 text9 dist/default/production\projeto-final.X.production.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\projeto-final.X.production.obj
+__end_of___lltoft 121A 0 CODE 0 text17 dist/default/production\projeto-final.X.production.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\projeto-final.X.production.obj
-__end_of___lwtoft 127A 0 CODE 0 text15 dist/default/production\projeto-final.X.production.obj
+__end_of___lwtoft 13EE 0 CODE 0 text16 dist/default/production\projeto-final.X.production.obj
 __size_of_LowPriorityISR 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 _INTCONbits FF2 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __size_of_HighPriorityISR 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-_SetDDRamAddr 10EE 0 CODE 0 text9 dist/default/production\projeto-final.X.production.obj
+_SetDDRamAddr 1264 0 CODE 0 text10 dist/default/production\projeto-final.X.production.obj
 __Habs1 0 0 ABS 0 abs1 dist/default/production\projeto-final.X.production.obj
 __Hdata 0 0 ABS 0 data dist/default/production\projeto-final.X.production.obj
-__Hinit 184 0 CODE 0 init dist/default/production\projeto-final.X.production.obj
+__Hinit 1EC 0 CODE 0 init dist/default/production\projeto-final.X.production.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\projeto-final.X.production.obj
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production\projeto-final.X.production.obj
-__Htemp 47 0 COMRAM 1 temp dist/default/production\projeto-final.X.production.obj
+__Htemp 4B 0 COMRAM 1 temp dist/default/production\projeto-final.X.production.obj
 __Htext 0 0 ABS 0 text dist/default/production\projeto-final.X.production.obj
 __Labs1 0 0 ABS 0 abs1 dist/default/production\projeto-final.X.production.obj
 __Ldata 0 0 ABS 0 data dist/default/production\projeto-final.X.production.obj
-__Linit 180 0 CODE 0 init dist/default/production\projeto-final.X.production.obj
+__Linit 1E8 0 CODE 0 init dist/default/production\projeto-final.X.production.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\projeto-final.X.production.obj
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\projeto-final.X.production.obj
-__Ltemp 46 0 COMRAM 1 temp dist/default/production\projeto-final.X.production.obj
+__Ltemp 4A 0 COMRAM 1 temp dist/default/production\projeto-final.X.production.obj
 __Ltext 0 0 ABS 0 text dist/default/production\projeto-final.X.production.obj
+___wmul 13A2 0 CODE 0 text3 dist/default/production\projeto-final.X.production.obj
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-int$flags 46 0 COMRAM 1 temp dist/default/production\projeto-final.X.production.obj
+int$flags 4A 0 COMRAM 1 temp dist/default/production\projeto-final.X.production.obj
 __HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
 __Hintret 0 0 ABS 0 intret dist/default/production\projeto-final.X.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production\projeto-final.X.production.obj
 _PR2 FCB 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __S0 30000E 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-__S1 A5 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
+__S1 AF 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __S2 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __size_of_WriteDataXLCD 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __size_of_DelayFor18TCY 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
+_dconst AD 0 BANK0 1 dataBANK0 dist/default/production\projeto-final.X.production.obj
 putsXLCD@buffer 78 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\projeto-final.X.production.obj
 __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production\projeto-final.X.production.obj
-int_func CFC 0 CODE 0 intcode_body dist/default/production\projeto-final.X.production.obj
+int_func DC0 0 CODE 0 intcode_body dist/default/production\projeto-final.X.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production\projeto-final.X.production.obj
 ___lldiv@divisor 7B 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 SetDDRamAddr@DDaddr 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __Hramtop 800 0 RAM 0 ramtop dist/default/production\projeto-final.X.production.obj
 __size_of_SetDDRamAddr 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\projeto-final.X.production.obj
+__pdataBANK0 AB 0 BANK0 1 dataBANK0 dist/default/production\projeto-final.X.production.obj
 __activetblptr 1 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Hstruct 0 0 COMRAM 1 struct dist/default/production\projeto-final.X.production.obj
+__size_of___wmul 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\projeto-final.X.production.obj
-__end_of_WriteDataXLCD 1178 0 CODE 0 text2 dist/default/production\projeto-final.X.production.obj
+__end_of_WriteDataXLCD 12EE 0 CODE 0 text2 dist/default/production\projeto-final.X.production.obj
 __Htext10 0 0 ABS 0 text10 dist/default/production\projeto-final.X.production.obj
 __Htext11 0 0 ABS 0 text11 dist/default/production\projeto-final.X.production.obj
 __Htext12 0 0 ABS 0 text12 dist/default/production\projeto-final.X.production.obj
 __Htext13 0 0 ABS 0 text13 dist/default/production\projeto-final.X.production.obj
-__Htext15 0 0 ABS 0 text15 dist/default/production\projeto-final.X.production.obj
+__Htext14 0 0 ABS 0 text14 dist/default/production\projeto-final.X.production.obj
 __Htext16 0 0 ABS 0 text16 dist/default/production\projeto-final.X.production.obj
 __Htext17 0 0 ABS 0 text17 dist/default/production\projeto-final.X.production.obj
 __Htext18 0 0 ABS 0 text18 dist/default/production\projeto-final.X.production.obj
+__Htext19 0 0 ABS 0 text19 dist/default/production\projeto-final.X.production.obj
+__Htext20 0 0 ABS 0 text20 dist/default/production\projeto-final.X.production.obj
 __size_of_OpenXLCD 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-__end_of_DelayFor18TCY 12AC 0 CODE 0 text13 dist/default/production\projeto-final.X.production.obj
+__end_of_DelayFor18TCY 1420 0 CODE 0 text14 dist/default/production\projeto-final.X.production.obj
 ___awmod@counter 7B 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 _PIE1bits F9D 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 WriteDataXLCD@data 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-__ptext10 127A 0 CODE 0 text10 dist/default/production\projeto-final.X.production.obj
-__ptext11 128E 0 CODE 0 text11 dist/default/production\projeto-final.X.production.obj
-__ptext12 11BC 0 CODE 0 text12 dist/default/production\projeto-final.X.production.obj
-__ptext13 12A2 0 CODE 0 text13 dist/default/production\projeto-final.X.production.obj
-__ptext15 1256 0 CODE 0 text15 dist/default/production\projeto-final.X.production.obj
-__ptext16 B14 0 CODE 0 text16 dist/default/production\projeto-final.X.production.obj
-__ptext17 C08 0 CODE 0 text17 dist/default/production\projeto-final.X.production.obj
-__ptext18 DB0 0 CODE 0 text18 dist/default/production\projeto-final.X.production.obj
-___awdiv F0A 0 CODE 0 text6 dist/default/production\projeto-final.X.production.obj
-___awmod 1014 0 CODE 0 text5 dist/default/production\projeto-final.X.production.obj
-___ftmul C08 0 CODE 0 text17 dist/default/production\projeto-final.X.production.obj
-___fttol B14 0 CODE 0 text16 dist/default/production\projeto-final.X.production.obj
-__pintcode_body CFC 0 CODE 0 intcode_body dist/default/production\projeto-final.X.production.obj
-___lldiv F90 0 CODE 0 text4 dist/default/production\projeto-final.X.production.obj
-___llmod 1086 0 CODE 0 text3 dist/default/production\projeto-final.X.production.obj
+__ptext10 1264 0 CODE 0 text10 dist/default/production\projeto-final.X.production.obj
+__ptext11 13EE 0 CODE 0 text11 dist/default/production\projeto-final.X.production.obj
+__ptext12 1402 0 CODE 0 text12 dist/default/production\projeto-final.X.production.obj
+__ptext13 1332 0 CODE 0 text13 dist/default/production\projeto-final.X.production.obj
+__ptext14 1416 0 CODE 0 text14 dist/default/production\projeto-final.X.production.obj
+__ptext16 13CA 0 CODE 0 text16 dist/default/production\projeto-final.X.production.obj
+__ptext17 11BE 0 CODE 0 text17 dist/default/production\projeto-final.X.production.obj
+__ptext18 BD8 0 CODE 0 text18 dist/default/production\projeto-final.X.production.obj
+__ptext19 CCC 0 CODE 0 text19 dist/default/production\projeto-final.X.production.obj
+__ptext20 E80 0 CODE 0 text20 dist/default/production\projeto-final.X.production.obj
+___awdiv FDA 0 CODE 0 text7 dist/default/production\projeto-final.X.production.obj
+___awmod 10E4 0 CODE 0 text6 dist/default/production\projeto-final.X.production.obj
+___ftmul CCC 0 CODE 0 text19 dist/default/production\projeto-final.X.production.obj
+___fttol BD8 0 CODE 0 text18 dist/default/production\projeto-final.X.production.obj
+__pintcode_body DC0 0 CODE 0 intcode_body dist/default/production\projeto-final.X.production.obj
+___lldiv 1060 0 CODE 0 text5 dist/default/production\projeto-final.X.production.obj
+___llmod 1156 0 CODE 0 text4 dist/default/production\projeto-final.X.production.obj
 __Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production\projeto-final.X.production.obj
 __Lbigram 0 0 ABS 0 bigram dist/default/production\projeto-final.X.production.obj
-__end_of_SetDDRamAddr 1134 0 CODE 0 text9 dist/default/production\projeto-final.X.production.obj
+__end_of_SetDDRamAddr 12AA 0 CODE 0 text10 dist/default/production\projeto-final.X.production.obj
 __Lcomram 0 0 ABS 0 comram dist/default/production\projeto-final.X.production.obj
 __Lconfig 300000 0 CONFIG 0 config dist/default/production\projeto-final.X.production.obj
 ?___ftpack 13 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+___wmul@multiplier 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 _LATEbits F8D 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-_result 9E 0 BANK0 1 bssBANK0 dist/default/production\projeto-final.X.production.obj
-main@aux2 98 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-main@cent 88 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+_result A6 0 BANK0 1 bssBANK0 dist/default/production\projeto-final.X.production.obj
+main@aux2 A0 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+main@aux3 9C 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+main@cent 8A 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 main@dez2 92 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-main@mil2 8E 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+main@dez3 98 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\projeto-final.X.production.obj
 main@uni2 94 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+main@uni3 9A 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 main@cent2 90 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+main@cent3 96 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\projeto-final.X.production.obj
 ___lwtoft@c 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-stackhi 7FF 0 ABS 0 - C:\Users\vitor\AppData\Local\Temp\sgck.obj
-stacklo A5 0 ABS 0 - C:\Users\vitor\AppData\Local\Temp\sgck.obj
+stackhi 7FF 0 ABS 0 - C:\Users\vitor\AppData\Local\Temp\shgs.obj
+stacklo AF 0 ABS 0 - C:\Users\vitor\AppData\Local\Temp\shgs.obj
 __Lintcode 8 0 CODE 0 intcode dist/default/production\projeto-final.X.production.obj
 __size_of_putsXLCD 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
+?___lltoft 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production\projeto-final.X.production.obj
 __Lirdata 0 0 CODE 0 irdata dist/default/production\projeto-final.X.production.obj
 ?___lwtoft 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
@@ -776,25 +844,26 @@ __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Lspace_0 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Lspace_1 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Lspace_2 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-___ftmul@cntr 2B 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-__pbssCOMRAM 3C 0 COMRAM 1 bssCOMRAM dist/default/production\projeto-final.X.production.obj
-___ftmul@sign 2C 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-_OpenXLCD E5E 0 CODE 0 text7 dist/default/production\projeto-final.X.production.obj
+___ftmul@cntr 31 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+__pbssCOMRAM 42 0 COMRAM 1 bssCOMRAM dist/default/production\projeto-final.X.production.obj
+___ftmul@sign 32 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+_OpenXLCD F2E 0 CODE 0 text8 dist/default/production\projeto-final.X.production.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 _PIR1bits F9E 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-_WriteCmdXLCD 1178 0 CODE 0 text8 dist/default/production\projeto-final.X.production.obj
+_WriteCmdXLCD 12EE 0 CODE 0 text9 dist/default/production\projeto-final.X.production.obj
 __CFG_CPUDIV$OSC1_PLL2 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-end_of_initialization 1244 0 CODE 0 cinit dist/default/production\projeto-final.X.production.obj
+main@result3 88 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+end_of_initialization 1252 0 CODE 0 cinit dist/default/production\projeto-final.X.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\projeto-final.X.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production\projeto-final.X.production.obj
 _RCONbits FD0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-__end_of_OpenXLCD F0A 0 CODE 0 text7 dist/default/production\projeto-final.X.production.obj
+__end_of_OpenXLCD FDA 0 CODE 0 text8 dist/default/production\projeto-final.X.production.obj
 ___awdiv@quotient 7D 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 ?___awdiv 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 ?___awmod 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
-?___ftmul 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-?___fttol 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+?___ftmul 24 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+?___fttol 33 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
 ?___lldiv 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 ?___llmod 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\projeto-final.X.production.obj
@@ -802,53 +871,57 @@ __HbssBANK0 0 0 ABS 0 bssBANK0 dist/default/production\projeto-final.X.productio
 ___awmod@dividend 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __Lramtop 800 0 RAM 0 ramtop dist/default/production\projeto-final.X.production.obj
 __Lrparam 0 0 COMRAM 1 rparam dist/default/production\projeto-final.X.production.obj
-__pcinit 122C 0 CODE 0 cinit dist/default/production\projeto-final.X.production.obj
-__ptext0 80A 0 CODE 0 text0 dist/default/production\projeto-final.X.production.obj
-__ptext1 11F6 0 CODE 0 text1 dist/default/production\projeto-final.X.production.obj
-__ptext2 1134 0 CODE 0 text2 dist/default/production\projeto-final.X.production.obj
-__ptext3 1086 0 CODE 0 text3 dist/default/production\projeto-final.X.production.obj
-__ptext4 F90 0 CODE 0 text4 dist/default/production\projeto-final.X.production.obj
-__ptext5 1014 0 CODE 0 text5 dist/default/production\projeto-final.X.production.obj
-__ptext6 F0A 0 CODE 0 text6 dist/default/production\projeto-final.X.production.obj
-__ptext7 E5E 0 CODE 0 text7 dist/default/production\projeto-final.X.production.obj
-__ptext8 1178 0 CODE 0 text8 dist/default/production\projeto-final.X.production.obj
-__ptext9 10EE 0 CODE 0 text9 dist/default/production\projeto-final.X.production.obj
+__pcinit 121A 0 CODE 0 cinit dist/default/production\projeto-final.X.production.obj
+___lltoft@exp 23 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+__ptext0 812 0 CODE 0 text0 dist/default/production\projeto-final.X.production.obj
+__ptext1 136C 0 CODE 0 text1 dist/default/production\projeto-final.X.production.obj
+__ptext2 12AA 0 CODE 0 text2 dist/default/production\projeto-final.X.production.obj
+__ptext3 13A2 0 CODE 0 text3 dist/default/production\projeto-final.X.production.obj
+__ptext4 1156 0 CODE 0 text4 dist/default/production\projeto-final.X.production.obj
+__ptext5 1060 0 CODE 0 text5 dist/default/production\projeto-final.X.production.obj
+__ptext6 10E4 0 CODE 0 text6 dist/default/production\projeto-final.X.production.obj
+__ptext7 FDA 0 CODE 0 text7 dist/default/production\projeto-final.X.production.obj
+__ptext8 F2E 0 CODE 0 text8 dist/default/production\projeto-final.X.production.obj
+__ptext9 12EE 0 CODE 0 text9 dist/default/production\projeto-final.X.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\projeto-final.X.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production\projeto-final.X.production.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/production\projeto-final.X.production.obj
 __Ltext12 0 0 ABS 0 text12 dist/default/production\projeto-final.X.production.obj
 __Ltext13 0 0 ABS 0 text13 dist/default/production\projeto-final.X.production.obj
-__Ltext15 0 0 ABS 0 text15 dist/default/production\projeto-final.X.production.obj
+__Ltext14 0 0 ABS 0 text14 dist/default/production\projeto-final.X.production.obj
 __Ltext16 0 0 ABS 0 text16 dist/default/production\projeto-final.X.production.obj
 __Ltext17 0 0 ABS 0 text17 dist/default/production\projeto-final.X.production.obj
 __Ltext18 0 0 ABS 0 text18 dist/default/production\projeto-final.X.production.obj
-__ramtop 800 0 RAM 0 ramtop C:\Users\vitor\AppData\Local\Temp\sgck.obj
-__Lpowerup 180 0 CODE 0 powerup dist/default/production\projeto-final.X.production.obj
+__Ltext19 0 0 ABS 0 text19 dist/default/production\projeto-final.X.production.obj
+__Ltext20 0 0 ABS 0 text20 dist/default/production\projeto-final.X.production.obj
+__ramtop 800 0 RAM 0 ramtop C:\Users\vitor\AppData\Local\Temp\shgs.obj
+__Lpowerup 1E8 0 CODE 0 powerup dist/default/production\projeto-final.X.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\projeto-final.X.production.obj
-_putsXLCD 11F6 0 CODE 0 text1 dist/default/production\projeto-final.X.production.obj
-_DelayPORXLCD 128E 0 CODE 0 text11 dist/default/production\projeto-final.X.production.obj
+_putsXLCD 136C 0 CODE 0 text1 dist/default/production\projeto-final.X.production.obj
+_DelayPORXLCD 1402 0 CODE 0 text12 dist/default/production\projeto-final.X.production.obj
 __psmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\projeto-final.X.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\projeto-final.X.production.obj
 __size_of_WriteCmdXLCD 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-__end_of_putsXLCD 122C 0 CODE 0 text1 dist/default/production\projeto-final.X.production.obj
+__end_of_putsXLCD 13A2 0 CODE 0 text1 dist/default/production\projeto-final.X.production.obj
 ___param_bank 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __CFG_WDT$OFF 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\projeto-final.X.production.obj
-___ftmul@exp 27 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-__end_of__initialization 1244 0 CODE 0 cinit dist/default/production\projeto-final.X.production.obj
+___ftmul@exp 2D 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+__end_of__initialization 1252 0 CODE 0 cinit dist/default/production\projeto-final.X.production.obj
 ___awmod@divisor 79 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\projeto-final.X.production.obj
+__pidataBANK0 1420 0 CODE 0 idataBANK0 dist/default/production\projeto-final.X.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\projeto-final.X.production.obj
 ___ftpack@sign 17 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
 __pintcodelo 18 0 CODE 0 intcodelo dist/default/production\projeto-final.X.production.obj
 ___lldiv@quotient 7F 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-__end_of_WriteCmdXLCD 11BC 0 CODE 0 text8 dist/default/production\projeto-final.X.production.obj
+__end_of_WriteCmdXLCD 1332 0 CODE 0 text9 dist/default/production\projeto-final.X.production.obj
 ___llmod@dividend 77 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 ___llmod@counter 7F 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
 __size_of_DelayPORXLCD 0 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-__end_of_main B14 0 CODE 0 text0 dist/default/production\projeto-final.X.production.obj
+__end_of_main BD8 0 CODE 0 text0 dist/default/production\projeto-final.X.production.obj
 _CCP2CONbits FBA 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __pintcode 8 0 CODE 0 intcode dist/default/production\projeto-final.X.production.obj
 _LowPriorityISR 18 0 CODE 0 intcodelo dist/default/production\projeto-final.X.production.obj
@@ -867,19 +940,21 @@ __LRAM 1 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Lbss 0 0 RAM 1 bss dist/default/production\projeto-final.X.production.obj
 __Lram 0 0 ABS 0 ram dist/default/production\projeto-final.X.production.obj
 __Lsfr 0 0 ABS 0 sfr dist/default/production\projeto-final.X.production.obj
-___fttol@sign1 36 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
-_contador A4 0 BANK0 1 bssBANK0 dist/default/production\projeto-final.X.production.obj
-__initialization 122C 0 CODE 0 cinit dist/default/production\projeto-final.X.production.obj
-__pbssBANK0 9A 0 BANK0 1 bssBANK0 dist/default/production\projeto-final.X.production.obj
+___fttol@sign1 3C 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production\projeto-final.X.production.obj
+_contador AA 0 BANK0 1 bssBANK0 dist/default/production\projeto-final.X.production.obj
+__initialization 121A 0 CODE 0 cinit dist/default/production\projeto-final.X.production.obj
+__pbssBANK0 A2 0 BANK0 1 bssBANK0 dist/default/production\projeto-final.X.production.obj
 _T2CONbits FCA 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
-__end_of_DelayPORXLCD 12A2 0 CODE 0 text11 dist/default/production\projeto-final.X.production.obj
+__end_of_DelayPORXLCD 1416 0 CODE 0 text12 dist/default/production\projeto-final.X.production.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\projeto-final.X.production.obj
-__Hsmallconst 80A 0 SMALLCONST 0 smallconst dist/default/production\projeto-final.X.production.obj
+___wmul@product 7B 0 BANK0 1 cstackBANK0 dist/default/production\projeto-final.X.production.obj
+__Hsmallconst 812 0 SMALLCONST 0 smallconst dist/default/production\projeto-final.X.production.obj
 __Lifardata 0 0 CODE 0 ifardata dist/default/production\projeto-final.X.production.obj
 _CCP1CONbits FBD 0 ABS 0 - dist/default/production\projeto-final.X.production.obj
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\projeto-final.X.production.obj
 __Hintcode E 0 CODE 0 intcode dist/default/production\projeto-final.X.production.obj
-___ftmul@f3_as_product 28 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
+___ftmul@f3_as_product 2E 0 COMRAM 1 cstackCOMRAM dist/default/production\projeto-final.X.production.obj
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -904,12 +979,12 @@ ___ftmul@f3_as_product 28 0 COMRAM 1 cstackCOMRAM dist/default/production\projet
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-intcodelo 0 18 18 16C 1
+intcodelo 0 18 18 1D4 1
 idloc 0 200000 200000 8 1
-text0 0 80A 80A AA2 1
-cstackCOMRAM 1 1 1 46 1
-cstackBANK0 1 60 60 45 1
+text0 0 812 812 C12 1
+cstackCOMRAM 1 1 1 4A 1
+cstackBANK0 1 60 60 4F 1
 reset_vec 0 0 0 4 1
 intcode 0 8 8 6 1
-smallconst 0 800 800 A 1
+smallconst 0 800 800 12 1
 config 0 300000 300000 E 1
