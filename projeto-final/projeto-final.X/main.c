@@ -3,7 +3,7 @@
 #pragma config FOSC = HS // Fosc = 20MHz; Tcy = 200ns
 #pragma config CPUDIV = OSC1_PLL2 // OSC/1 com PLL off
 #pragma config WDT = OFF // Watchdog desativado
-#pragma config LVP = OFF // Desabilita gravação em baixa
+#pragma config LVP = OFF // Desabilita gravaï¿½ï¿½o em baixa
 #pragma config DEBUG = ON // Habilita debug
 #pragma config MCLRE = ON // Habilita MCLR
 #define _XTAL_FREQ 20000000 // uC opera com cristal de 20 MHz
@@ -13,13 +13,13 @@ unsigned char contador = 0;
 unsigned long int result = 0;
 unsigned long int result2 = 0;
 unsigned long int valorconv = 0;
-unsigned int dconst = 768; //(PR2+1)*4
+unsigned float dconst = 768.00; //(PR2+1)*4
 
-unsigned long int dc = 0;
-unsigned long int vent = 0;
-unsigned long int pot = 0;
+unsigned float dc = 0;
+unsigned float vent = 0;
+unsigned float pot = 0;
 unsigned int leiturapotenciometro = 0;
-unsigned int temp = 350;
+unsigned long int temp = 350;
 
 void interrupt HighPriorityISR(void) {
     INTCONbits.TMR0IF = 0; // limpa a flag
@@ -67,14 +67,14 @@ void interrupt low_priority LowPriorityISR(void) {
 
 void main(void) {
     int cent, aux, dez, uni;
-    int dez2, uni2;
+    int dez2, aux2, uni2;
     int porcentagem, cent3, aux3, dez3, uni3;
     //Configuracao entradas e saidas
     TRISA = 0xFF; // RA0 e RA3 como entradas
     TRISC = 0x00; // RC1 e RC2 como saidas
-    TRISB = 0XFF; // RB0 e RB1 como entradas
+    TRISB = 0XFF; // RB1 e RB2 como entradas
 
-    //Configuração para o algoritmo de variação da razão cíclica (CCP1)
+    //Configuraï¿½ï¿½o para o algoritmo de variaï¿½ï¿½o da razï¿½o cï¿½clica (CCP1)
     CCP1CONbits.CCP1M3 = 1;
     CCP1CONbits.CCP1M2 = 1;
     CCP1CONbits.CCP1M1 = 0;
@@ -112,7 +112,7 @@ void main(void) {
     // Configuracao e habilita interrupcoes globais
     RCONbits.IPEN = 1; // Habilitar niveis prioridades de interrupcao
     INTCONbits.GIEH = 1; // Habilitar interrupcoes globais
-    INTCONbits.GIEL = 1; // Habilitar interrupcoes de periféricos
+    INTCONbits.GIEL = 1; // Habilitar interrupcoes de perifï¿½ricos
 
     // Configurar interrupcoes externas INT1 (RB1) e INT2 (RB2)
     INTCON3bits.INT1IE = 1; // Habilitar INT1
@@ -123,6 +123,7 @@ void main(void) {
     INTCON3bits.INT2IF = 0; // Limpar flag INT2
     INTCON3bits.INT1IP = 0; // Baixa do INT1 prioridade
     INTCON3bits.INT2IP = 0; // Baixa do INT2 prioridade
+    INTCON2.RBPU = 0; // Pull-up habilitado no PORTB
 
     // Configuracao do Timer0
     T0CON = 0b11000101; // timer on, 8 bits, clock interno, borda de subida, pre scaler de 64
@@ -139,16 +140,16 @@ void main(void) {
     //tmr0 = 65536 - (20000000 / (4 * 2 * 1500));
     TMR0L = 100;
 
-    //Configuração para o CCP2 em modo PWM
+    //Configuraï¿½ï¿½o para o CCP2 em modo PWM
     CCP2CONbits.CCP2M3 = 1;
     CCP2CONbits.CCP2M2 = 1;
 
-    pot = 537.6 + (0.22521994134897360703812316715543 * result2); // (((PR2+1)*4)-((PR2+1)*4)*0.7) / 1023
+    pot = 537.6 + (0.22521994134897360703812316715543 * (float)result2); // (((PR2+1)*4)-((PR2+1)*4)*0.7) / 1023
     CCPR2L = (char) pot >> 2;
     CCP2CONbits.DC2B1 = (pot >> 1) % 2;
     CCP2CONbits.DC2B0 = pot % 2;
 
-    //Inicialização do LCD
+    //Inicializaï¿½ï¿½o do LCD
     OpenXLCD(FOUR_BIT & LINES_5X7);
     WriteCmdXLCD(0x01);
     __delay_ms(2);
@@ -177,25 +178,26 @@ void main(void) {
             putcXLCD(',');
             putcXLCD(0x30 + uni);
             
-            dez2 = temp/10;
-            uni2 = temp%10;
+            dez2 = temp/100;
+            aux2 = temp%100;
+            uni2 = aux2/10;
             WriteCmdXLCD(0x89);
             putsXLCD("Tr:");
             putcXLCD(0x30 + dez2);
             putcXLCD(0x30 + uni2);
             
-            dc = -(result-temp);
+            dc = -(float)(result-temp);
             if(dc<0)
                 dc = 0;
             else if(dc>1)
                 dc = 1;
             
-            vent = dconst*dc;
+            vent = (float)(dconst)*dc;
             CCPR1L = (char) (vent >> 2);
             CCP1CONbits.DC1B0 = vent % 2;
             CCP1CONbits.DC1B1 = (vent >> 1) % 2;
             
-            porcentagem = dc*100;
+            porcentagem = (int)(dc*100.00);
             WriteCmdXLCD(0xC3);
             putsXLCD("Razao:");
             cent3 = porcentagem / 100;
