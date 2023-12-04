@@ -59,8 +59,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
 "6790
 [v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
+"8417
+[s S348 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S348 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
+"8427
+[s S349 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S349 . INT1F INT2F . INT1E INT2E . INT1P INT2P ]
+"8416
+[u S347 `S348 1 `S349 1 ]
+[n S347 . . . ]
+"8438
+[v _INTCON3bits `VS347 ~T0 @X0 0 e@4080 ]
+[v F3783 `(v ~T0 @X0 1 tf1`ul ]
+"164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
+[v __delay `JF3783 ~T0 @X0 0 e ]
+[p i __delay ]
 [p mainexit ]
-"3425
+"3425 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f4550.h
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
 "3845
 [v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
@@ -93,8 +108,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _T2CONbits `VS295 ~T0 @X0 0 e@4042 ]
 "7296
 [v _PR2 `Vuc ~T0 @X0 0 e@4043 ]
-"6494
-[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
 "4388
 [s S170 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S170 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE SPPIE ]
@@ -146,17 +159,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S316 . . . . . . . . . ]
 "7586
 [v _RCONbits `VS316 ~T0 @X0 0 e@4048 ]
-"8417
-[s S348 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S348 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
-"8427
-[s S349 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S349 . INT1F INT2F . INT1E INT2E . INT1P INT2P ]
-"8416
-[u S347 `S348 1 `S349 1 ]
-[n S347 . . . ]
-"8438
-[v _INTCON3bits `VS347 ~T0 @X0 0 e@4080 ]
 "8509
 [s S351 :7 `uc 1 :1 `uc 1 ]
 [n S351 . . NOT_RBPU ]
@@ -203,14 +205,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _OpenXLCD `(v ~T0 @X0 0 ef1`uc ]
 "129
 [v _WriteCmdXLCD `(v ~T0 @X0 0 ef1`uc ]
-[v F3783 `(v ~T0 @X0 1 tf1`ul ]
-"164 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18.h
-[v __delay `JF3783 ~T0 @X0 0 e ]
-[p i __delay ]
+"6311 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f4550.h
+[v _CCPR2L `Vuc ~T0 @X0 0 e@4027 ]
 "144 nxlcd.h
 [v _putsXLCD `(v ~T0 @X0 0 ef1`*uc ]
 "134
 [v _WriteDataXLCD `(v ~T0 @X0 0 ef1`uc ]
+"6494 C:\Program Files (x86)\Microchip\xc8\v1.45\include\pic18f4550.h
+[v _CCPR1L `Vuc ~T0 @X0 0 e@4030 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -3734,491 +3736,582 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;nxlcd.h: 134: void WriteDataXLCD( char);
 [; ;nxlcd.h: 144: void putsXLCD( char *);
 [; ;nxlcd.h: 149: void putrsXLCD(const char *);
-"3 main.c
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+"4 main.c
 [p x FOSC=HS ]
-"4
-[p x CPUDIV=OSC1_PLL2 ]
 "5
-[p x WDT=OFF ]
+[p x CPUDIV=OSC1_PLL2 ]
 "6
-[p x LVP=OFF ]
+[p x WDT=OFF ]
 "7
-[p x DEBUG=ON ]
+[p x LVP=OFF ]
 "8
+[p x DEBUG=ON ]
+"9
 [p x MCLRE=ON ]
-"10
+"11
+[p x CCP2MX=ON ]
+"13
 [v _contador `uc ~T0 @X0 1 e ]
 [i _contador
 -> -> 0 `i `uc
 ]
-[; ;main.c: 10: unsigned char contador = 0;
-"11
+[; ;main.c: 13: unsigned char contador = 0;
+"14
 [v _result `ul ~T0 @X0 1 e ]
 [i _result
 -> -> -> 0 `i `l `ul
 ]
-[; ;main.c: 11: unsigned long int result = 0;
-"12
+[; ;main.c: 14: unsigned long int result = 0;
+"15
 [v _result2 `ul ~T0 @X0 1 e ]
 [i _result2
 -> -> -> 0 `i `l `ul
 ]
-[; ;main.c: 12: unsigned long int result2 = 0;
-"13
-[v _valorconv `ui ~T0 @X0 1 e ]
+[; ;main.c: 15: unsigned long int result2 = 0;
+"16
+[v _valorconv `ul ~T0 @X0 1 e ]
 [i _valorconv
--> -> 0 `i `ui
-]
-[; ;main.c: 13: unsigned int valorconv = 0;
-"14
-[v _dc `ul ~T0 @X0 1 e ]
-[i _dc
 -> -> -> 0 `i `l `ul
 ]
-[; ;main.c: 14: unsigned long int dc = 0;
-"15
-[v _dconst `ui ~T0 @X0 1 e ]
+[; ;main.c: 16: unsigned long int valorconv = 0;
+"17
+[v _dconst `ul ~T0 @X0 1 e ]
 [i _dconst
--> -> 768 `i `ui
+-> -> -> 768 `i `l `ul
 ]
-[; ;main.c: 15: unsigned int dconst = 768;
-"16
-[v _duty `ui ~T0 @X0 1 e ]
-[i _duty
--> -> 768 `i `ui
+[; ;main.c: 17: unsigned long int dconst = 768;
+"19
+[v _dc `i ~T0 @X0 1 e ]
+[i _dc
+-> 0 `i
 ]
+[; ;main.c: 19: int dc = 0;
+"20
+[v _dc2 `f ~T0 @X0 1 e ]
+[i _dc2
+-> .0.0 `f
+]
+[; ;main.c: 20: float dc2 = 0.0;
+"21
+[v _vent `ul ~T0 @X0 1 e ]
+[i _vent
+-> -> -> 0 `i `l `ul
+]
+[; ;main.c: 21: unsigned long int vent = 0;
+"22
+[v _pot `ul ~T0 @X0 1 e ]
+[i _pot
+-> -> -> 0 `i `l `ul
+]
+[; ;main.c: 22: unsigned long int pot = 0;
+"23
 [v _leiturapotenciometro `ui ~T0 @X0 1 e ]
 [i _leiturapotenciometro
 -> -> 0 `i `ui
 ]
-[; ;main.c: 16: unsigned int duty = 768, leiturapotenciometro = 0;
+[; ;main.c: 23: unsigned int leiturapotenciometro = 0;
+"24
+[v _temp `ul ~T0 @X0 1 e ]
+[i _temp
+-> -> -> 350 `i `l `ul
+]
+[; ;main.c: 24: unsigned long int temp = 350;
 [v $root$_HighPriorityISR `(v ~T0 @X0 0 e ]
-[v F3826 `(v ~T0 @X0 1 tf ]
-"18
-[v _HighPriorityISR `IF3826 ~T0 @X0 1 e ]
+[v F3891 `(v ~T0 @X0 1 tf ]
+"26
+[v _HighPriorityISR `IF3891 ~T0 @X0 1 e ]
 {
-[; ;main.c: 18: void interrupt HighPriorityISR(void){
+[; ;main.c: 26: void interrupt HighPriorityISR(void) {
 [e :U _HighPriorityISR ]
 [f ]
-[; ;main.c: 19: INTCONbits.TMR0IF = 0;
-"19
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 20: TMR0L = 100;
-"20
-[e = _TMR0L -> -> 100 `i `uc ]
-[; ;main.c: 21: ADCON0bits.GO_DONE = 1;
-"21
-[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
-[; ;main.c: 22: if(contador == 100){
-"22
-[e $ ! == -> _contador `i -> 100 `i 363  ]
-{
-[; ;main.c: 23: contador = 1;
-"23
-[e = _contador -> -> 1 `i `uc ]
-[; ;main.c: 24: leiturapotenciometro = 1;
-"24
-[e = _leiturapotenciometro -> -> 1 `i `ui ]
-[; ;main.c: 25: ADCON0bits.CHS1 = 1;
-"25
-[e = . . _ADCON0bits 2 3 -> -> 1 `i `uc ]
-[; ;main.c: 26: ADCON0bits.CHS0 = 1;
-"26
-[e = . . _ADCON0bits 2 2 -> -> 1 `i `uc ]
-[; ;main.c: 27: ADCON0bits.GO_DONE = 1;
+[; ;main.c: 27: INTCONbits.TMR0IF = 0;
 "27
-[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 28: TMR0L = 100;
+"28
+[e = _TMR0L -> -> 100 `i `uc ]
+[; ;main.c: 29: ADCON0bits.GO_DONE = 1;
 "29
-}
-[; ;main.c: 29: }else {
-[e $U 364  ]
-[e :U 363 ]
-{
-[; ;main.c: 30: ADCON0bits.CHS1 = 0;
-"30
-[e = . . _ADCON0bits 2 3 -> -> 0 `i `uc ]
-[; ;main.c: 31: ADCON0bits.CHS0 = 0;
-"31
-[e = . . _ADCON0bits 2 2 -> -> 0 `i `uc ]
-[; ;main.c: 32: ADCON0bits.GO_DONE = 1;
-"32
 [e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+[; ;main.c: 30: if (contador == 100) {
+"30
+[e $ ! == -> _contador `i -> 100 `i 364  ]
+{
+[; ;main.c: 31: contador = 1;
+"31
+[e = _contador -> -> 1 `i `uc ]
+[; ;main.c: 32: leiturapotenciometro = 1;
+"32
+[e = _leiturapotenciometro -> -> 1 `i `ui ]
+[; ;main.c: 33: ADCON0bits.CHS1 = 1;
 "33
-}
-[e :U 364 ]
-[; ;main.c: 33: }
-[; ;main.c: 34: }
+[e = . . _ADCON0bits 2 3 -> -> 1 `i `uc ]
+[; ;main.c: 34: ADCON0bits.CHS0 = 1;
 "34
-[e :UE 362 ]
+[e = . . _ADCON0bits 2 2 -> -> 1 `i `uc ]
+[; ;main.c: 35: ADCON0bits.GO_DONE = 1;
+"35
+[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+"37
+}
+[; ;main.c: 37: } else {
+[e $U 365  ]
+[e :U 364 ]
+{
+[; ;main.c: 38: ADCON0bits.CHS1 = 0;
+"38
+[e = . . _ADCON0bits 2 3 -> -> 0 `i `uc ]
+[; ;main.c: 39: ADCON0bits.CHS0 = 0;
+"39
+[e = . . _ADCON0bits 2 2 -> -> 0 `i `uc ]
+[; ;main.c: 40: ADCON0bits.GO_DONE = 1;
+"40
+[e = . . _ADCON0bits 2 1 -> -> 1 `i `uc ]
+"41
+}
+[e :U 365 ]
+[; ;main.c: 41: }
+[; ;main.c: 42: }
+"42
+[e :UE 363 ]
 }
 [v $root$_LowPriorityISR `(v ~T0 @X0 0 e ]
-[v F3829 `(v ~T0 @X0 1 tf ]
-"36
-[v _LowPriorityISR `ILF3829 ~T0 @X0 1 e ]
+[v F3894 `(v ~T0 @X0 1 tf ]
+"44
+[v _LowPriorityISR `ILF3894 ~T0 @X0 1 e ]
 {
-[; ;main.c: 36: void interrupt low_priority LowPriorityISR(void) {
+[; ;main.c: 44: void interrupt low_priority LowPriorityISR(void) {
 [e :U _LowPriorityISR ]
 [f ]
-[; ;main.c: 37: PIR1bits.ADIF = 0;
-"37
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 38: contador++;
-"38
-[e ++ _contador -> -> 1 `i `uc ]
-[; ;main.c: 39: valorconv = 256 * ADRESH + ADRESL;
-"39
-[e = _valorconv -> + * -> 256 `i -> _ADRESH `i -> _ADRESL `i `ui ]
-[; ;main.c: 40: if(leiturapotenciometro){
-"40
-[e $ ! != _leiturapotenciometro -> -> 0 `i `ui 366  ]
-{
-[; ;main.c: 41: leiturapotenciometro = 0;
-"41
-[e = _leiturapotenciometro -> -> 0 `i `ui ]
-[; ;main.c: 42: result2 = 4.887585533*valorconv;
-"42
-[e = _result2 -> * .4.887585533 -> _valorconv `d `ul ]
-[; ;main.c: 43: result2 = result2*0.03;
-"43
-[e = _result2 -> * -> _result2 `d .0.03 `ul ]
-[; ;main.c: 44: result2 = 350+result2;
-"44
-[e = _result2 + -> -> -> 350 `i `l `ul _result2 ]
+[; ;main.c: 45: PIR1bits.ADIF = 0;
 "45
-}
-[; ;main.c: 45: } else {
-[e $U 367  ]
-[e :U 366 ]
-{
-[; ;main.c: 46: result = valorconv*4.887585533;
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 46: contador++;
 "46
-[e = _result -> * -> _valorconv `d .4.887585533 `ul ]
+[e ++ _contador -> -> 1 `i `uc ]
+[; ;main.c: 47: valorconv = 256 * ADRESH + ADRESL;
 "47
-}
-[e :U 367 ]
-[; ;main.c: 47: }
-[; ;main.c: 49: }
+[e = _valorconv -> -> + * -> 256 `i -> _ADRESH `i -> _ADRESL `i `l `ul ]
+[; ;main.c: 48: if (leiturapotenciometro) {
+"48
+[e $ ! != _leiturapotenciometro -> -> 0 `i `ui 367  ]
+{
+[; ;main.c: 49: leiturapotenciometro = 0;
 "49
-[e :UE 365 ]
+[e = _leiturapotenciometro -> -> 0 `i `ui ]
+[; ;main.c: 50: result2 = valorconv;
+"50
+[e = _result2 _valorconv ]
+"51
+}
+[; ;main.c: 51: } else {
+[e $U 368  ]
+[e :U 367 ]
+{
+[; ;main.c: 52: result = valorconv * 4.887585533;
+"52
+[e = _result -> * -> _valorconv `d .4.887585533 `ul ]
+"53
+}
+[e :U 368 ]
+[; ;main.c: 53: }
+[; ;main.c: 55: if (INTCON3bits.INT1IF) {
+"55
+[e $ ! != -> . . _INTCON3bits 0 0 `i -> -> -> 0 `i `Vuc `i 369  ]
+{
+[; ;main.c: 56: INTCON3bits.INT1IF = 0;
+"56
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 57: if (temp < 500)
+"57
+[e $ ! < _temp -> -> -> 500 `i `l `ul 370  ]
+[; ;main.c: 58: temp=temp+10;
+"58
+[e = _temp + _temp -> -> -> 10 `i `l `ul ]
+[e :U 370 ]
+[; ;main.c: 59: _delay((unsigned long)((500)*(20000000/4000.0)));
+"59
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"60
+}
+[e :U 369 ]
+[; ;main.c: 60: }
+[; ;main.c: 61: if (INTCON3bits.INT2IF) {
+"61
+[e $ ! != -> . . _INTCON3bits 0 1 `i -> -> -> 0 `i `Vuc `i 371  ]
+{
+[; ;main.c: 62: INTCON3bits.INT2IF = 0;
+"62
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 63: if (temp > 350)
+"63
+[e $ ! > _temp -> -> -> 350 `i `l `ul 372  ]
+[; ;main.c: 64: temp=temp-10;
+"64
+[e = _temp - _temp -> -> -> 10 `i `l `ul ]
+[e :U 372 ]
+[; ;main.c: 65: _delay((unsigned long)((500)*(20000000/4000.0)));
+"65
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"66
+}
+[e :U 371 ]
+[; ;main.c: 66: }
+[; ;main.c: 67: }
+"67
+[e :UE 366 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"51
+"69
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 51: void main(void) {
+[; ;main.c: 69: void main(void) {
 [e :U _main ]
 [f ]
-"52
+"70
 [v _cent `i ~T0 @X0 1 a ]
 [v _aux `i ~T0 @X0 1 a ]
 [v _dez `i ~T0 @X0 1 a ]
 [v _uni `i ~T0 @X0 1 a ]
-"53
-[v _mil2 `i ~T0 @X0 1 a ]
-[v _cent2 `i ~T0 @X0 1 a ]
-[v _aux2 `i ~T0 @X0 1 a ]
+"71
 [v _dez2 `i ~T0 @X0 1 a ]
+[v _aux2 `i ~T0 @X0 1 a ]
 [v _uni2 `i ~T0 @X0 1 a ]
-"54
-[v _result3 `i ~T0 @X0 1 a ]
+"72
+[v _porcentagem `i ~T0 @X0 1 a ]
 [v _cent3 `i ~T0 @X0 1 a ]
 [v _aux3 `i ~T0 @X0 1 a ]
 [v _dez3 `i ~T0 @X0 1 a ]
 [v _uni3 `i ~T0 @X0 1 a ]
-[; ;main.c: 52: int cent,aux,dez,uni;
-[; ;main.c: 53: int mil2,cent2,aux2,dez2,uni2;
-[; ;main.c: 54: int result3,cent3,aux3,dez3,uni3;
-[; ;main.c: 56: TRISA = 0xFF;
-"56
+[; ;main.c: 70: int cent, aux, dez, uni;
+[; ;main.c: 71: int dez2, aux2, uni2;
+[; ;main.c: 72: int porcentagem, cent3, aux3, dez3, uni3;
+[; ;main.c: 74: TRISA = 0xFF;
+"74
 [e = _TRISA -> -> 255 `i `uc ]
-[; ;main.c: 57: TRISC = 0x00;
-"57
+[; ;main.c: 75: TRISC = 0x00;
+"75
 [e = _TRISC -> -> 0 `i `uc ]
-[; ;main.c: 58: TRISB = 0XFF;
-"58
+[; ;main.c: 76: TRISB = 0XFF;
+"76
 [e = _TRISB -> -> 255 `i `uc ]
-[; ;main.c: 61: CCP1CONbits.CCP1M3 = 1;
-"61
-[e = . . _CCP1CONbits 1 3 -> -> 1 `i `uc ]
-[; ;main.c: 62: CCP1CONbits.CCP1M2 = 1;
-"62
-[e = . . _CCP1CONbits 1 2 -> -> 1 `i `uc ]
-[; ;main.c: 63: CCP1CONbits.CCP1M1 = 0;
-"63
-[e = . . _CCP1CONbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 64: CCP1CONbits.CCP1M0 = 0;
-"64
-[e = . . _CCP1CONbits 1 0 -> -> 0 `i `uc ]
-[; ;main.c: 67: T2CONbits.T2OUTPS3 = 0;
-"67
-[e = . . _T2CONbits 1 6 -> -> 0 `i `uc ]
-[; ;main.c: 68: T2CONbits.T2OUTPS2 = 0;
-"68
-[e = . . _T2CONbits 1 5 -> -> 0 `i `uc ]
-[; ;main.c: 69: T2CONbits.T2OUTPS1 = 0;
-"69
-[e = . . _T2CONbits 1 4 -> -> 0 `i `uc ]
-[; ;main.c: 70: T2CONbits.T2OUTPS0 = 0;
-"70
-[e = . . _T2CONbits 1 3 -> -> 0 `i `uc ]
-[; ;main.c: 71: T2CONbits.TMR2ON = 1;
-"71
-[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
-[; ;main.c: 72: T2CONbits.T2CKPS1 = 0;
-"72
-[e = . . _T2CONbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 73: T2CONbits.T2CKPS0 = 1;
-"73
-[e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
-[; ;main.c: 77: PR2 = 191;
-"77
-[e = _PR2 -> -> 191 `i `uc ]
-[; ;main.c: 79: CCPR1L = (char)(duty >> 2);
+[; ;main.c: 79: CCP1CONbits.CCP1M3 = 1;
 "79
-[e = _CCPR1L -> >> _duty -> 2 `i `uc ]
-[; ;main.c: 80: CCP1CONbits.DC1B0 = duty%2;
+[e = . . _CCP1CONbits 1 3 -> -> 1 `i `uc ]
+[; ;main.c: 80: CCP1CONbits.CCP1M2 = 1;
 "80
-[e = . . _CCP1CONbits 1 4 -> % _duty -> -> 2 `i `ui `uc ]
-[; ;main.c: 81: CCP1CONbits.DC1B1 = (duty >> 1)%2;
+[e = . . _CCP1CONbits 1 2 -> -> 1 `i `uc ]
+[; ;main.c: 81: CCP1CONbits.CCP1M1 = 0;
 "81
-[e = . . _CCP1CONbits 1 5 -> % >> _duty -> 1 `i -> -> 2 `i `ui `uc ]
-[; ;main.c: 84: PIE1bits.ADIE = 1;
-"84
-[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 85: PIR1bits.ADIF = 0;
+[e = . . _CCP1CONbits 1 1 -> -> 0 `i `uc ]
+[; ;main.c: 82: CCP1CONbits.CCP1M0 = 0;
+"82
+[e = . . _CCP1CONbits 1 0 -> -> 0 `i `uc ]
+[; ;main.c: 85: T2CONbits.T2OUTPS3 = 0;
 "85
-[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 86: IPR1bits.ADIP = 0;
+[e = . . _T2CONbits 1 6 -> -> 0 `i `uc ]
+[; ;main.c: 86: T2CONbits.T2OUTPS2 = 0;
 "86
-[e = . . _IPR1bits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 89: ADCON0bits.CHS3 = 0;
+[e = . . _T2CONbits 1 5 -> -> 0 `i `uc ]
+[; ;main.c: 87: T2CONbits.T2OUTPS1 = 0;
+"87
+[e = . . _T2CONbits 1 4 -> -> 0 `i `uc ]
+[; ;main.c: 88: T2CONbits.T2OUTPS0 = 0;
+"88
+[e = . . _T2CONbits 1 3 -> -> 0 `i `uc ]
+[; ;main.c: 89: T2CONbits.TMR2ON = 1;
 "89
-[e = . . _ADCON0bits 2 5 -> -> 0 `i `uc ]
-[; ;main.c: 90: ADCON0bits.CHS2 = 0;
+[e = . . _T2CONbits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 90: T2CONbits.T2CKPS1 = 0;
 "90
-[e = . . _ADCON0bits 2 4 -> -> 0 `i `uc ]
-[; ;main.c: 91: ADCON0bits.CHS1 = 0;
+[e = . . _T2CONbits 1 1 -> -> 0 `i `uc ]
+[; ;main.c: 91: T2CONbits.T2CKPS0 = 1;
 "91
-[e = . . _ADCON0bits 2 3 -> -> 0 `i `uc ]
-[; ;main.c: 92: ADCON0bits.CHS0 = 0;
-"92
-[e = . . _ADCON0bits 2 2 -> -> 0 `i `uc ]
-[; ;main.c: 93: ADCON0bits.ADON = 1;
-"93
-[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
-[; ;main.c: 96: RCONbits.IPEN = 1;
-"96
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;main.c: 97: INTCONbits.GIEH = 1;
-"97
-[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
-[; ;main.c: 98: INTCONbits.GIEL = 1;
-"98
-[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
-[; ;main.c: 101: INTCON3bits.INT1IE = 1;
+[e = . . _T2CONbits 1 0 -> -> 1 `i `uc ]
+[; ;main.c: 95: PR2 = 191;
+"95
+[e = _PR2 -> -> 191 `i `uc ]
+[; ;main.c: 99: PIE1bits.ADIE = 1;
+"99
+[e = . . _PIE1bits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 100: PIR1bits.ADIF = 0;
+"100
+[e = . . _PIR1bits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 101: IPR1bits.ADIP = 0;
 "101
-[e = . . _INTCON3bits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 102: INTCON3bits.INT2IE = 1;
-"102
-[e = . . _INTCON3bits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 103: INTCON2bits.INTEDG1 = 0;
-"103
-[e = . . _INTCON2bits 1 5 -> -> 0 `i `uc ]
-[; ;main.c: 104: INTCON2bits.INTEDG2 = 0;
+[e = . . _IPR1bits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 104: ADCON0bits.CHS3 = 0;
 "104
-[e = . . _INTCON2bits 1 4 -> -> 0 `i `uc ]
-[; ;main.c: 105: INTCON3bits.INT1IF = 0;
+[e = . . _ADCON0bits 2 5 -> -> 0 `i `uc ]
+[; ;main.c: 105: ADCON0bits.CHS2 = 0;
 "105
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-[; ;main.c: 106: INTCON3bits.INT2IF = 0;
+[e = . . _ADCON0bits 2 4 -> -> 0 `i `uc ]
+[; ;main.c: 106: ADCON0bits.CHS1 = 0;
 "106
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 107: INTCON3bits.INT1IP = 0;
+[e = . . _ADCON0bits 2 3 -> -> 0 `i `uc ]
+[; ;main.c: 107: ADCON0bits.CHS0 = 0;
 "107
-[e = . . _INTCON3bits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 108: INTCON3bits.INT2IP = 0;
+[e = . . _ADCON0bits 2 2 -> -> 0 `i `uc ]
+[; ;main.c: 108: ADCON0bits.ADON = 1;
 "108
-[e = . . _INTCON3bits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 111: T0CON = 0b11000101;
+[e = . . _ADCON0bits 1 0 -> -> 1 `i `uc ]
+[; ;main.c: 111: RCONbits.IPEN = 1;
 "111
-[e = _T0CON -> -> 197 `i `uc ]
-[; ;main.c: 112: TMR0L = 100;
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;main.c: 112: INTCONbits.GIEH = 1;
 "112
-[e = _TMR0L -> -> 100 `i `uc ]
-[; ;main.c: 113: TRISAbits.TRISA0 = 1;
+[e = . . _INTCONbits 2 2 -> -> 1 `i `uc ]
+[; ;main.c: 113: INTCONbits.GIEL = 1;
 "113
-[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
-[; ;main.c: 114: ADCON1 = 0b00001011;
-"114
-[e = _ADCON1 -> -> 11 `i `uc ]
-[; ;main.c: 115: ADCON2 = 0b10010101;
-"115
-[e = _ADCON2 -> -> 149 `i `uc ]
-[; ;main.c: 116: INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 2 1 -> -> 1 `i `uc ]
+[; ;main.c: 116: INTCON3bits.INT1IE = 1;
 "116
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;main.c: 117: INTCONbits.TMR0IE = 1;
+[e = . . _INTCON3bits 0 3 -> -> 1 `i `uc ]
+[; ;main.c: 117: INTCON3bits.INT2IE = 1;
 "117
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 118: INTCON2bits.TMR0IP = 1;
+[e = . . _INTCON3bits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 118: INTCON2bits.INTEDG1 = 0;
 "118
-[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
-[; ;main.c: 123: TMR0L = 100;
+[e = . . _INTCON2bits 1 5 -> -> 0 `i `uc ]
+[; ;main.c: 119: INTCON2bits.INTEDG2 = 0;
+"119
+[e = . . _INTCON2bits 1 4 -> -> 0 `i `uc ]
+[; ;main.c: 120: INTCON3bits.INT1IF = 0;
+"120
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 121: INTCON3bits.INT2IF = 0;
+"121
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 122: INTCON3bits.INT1IP = 0;
+"122
+[e = . . _INTCON3bits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 123: INTCON3bits.INT2IP = 0;
 "123
-[e = _TMR0L -> -> 100 `i `uc ]
-[; ;main.c: 126: CCP2CONbits.CCP2M3 = 1;
-"126
-[e = . . _CCP2CONbits 1 3 -> -> 1 `i `uc ]
-[; ;main.c: 127: CCP2CONbits.CCP2M2 = 1;
+[e = . . _INTCON3bits 0 7 -> -> 0 `i `uc ]
+[; ;main.c: 124: INTCON2bits.RBPU = 0;
+"124
+[e = . . _INTCON2bits 2 3 -> -> 0 `i `uc ]
+[; ;main.c: 127: T0CON = 0b11000101;
 "127
-[e = . . _CCP2CONbits 1 2 -> -> 1 `i `uc ]
-[; ;main.c: 130: OpenXLCD(0b00101100 & 0b00111000);
+[e = _T0CON -> -> 197 `i `uc ]
+[; ;main.c: 128: TMR0L = 100;
+"128
+[e = _TMR0L -> -> 100 `i `uc ]
+[; ;main.c: 129: TRISAbits.TRISA0 = 1;
+"129
+[e = . . _TRISAbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 130: ADCON1 = 0b00001011;
 "130
-[e ( _OpenXLCD (1 -> & -> 44 `i -> 56 `i `uc ]
-[; ;main.c: 131: WriteCmdXLCD(0x01);
+[e = _ADCON1 -> -> 11 `i `uc ]
+[; ;main.c: 131: ADCON2 = 0b10010101;
 "131
-[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
-[; ;main.c: 132: _delay((unsigned long)((2)*(20000000/4000.0)));
+[e = _ADCON2 -> -> 149 `i `uc ]
+[; ;main.c: 132: INTCONbits.TMR0IF = 0;
 "132
-[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;main.c: 139: while(1){
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 133: INTCONbits.TMR0IE = 1;
+"133
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 134: INTCON2bits.TMR0IP = 1;
+"134
+[e = . . _INTCON2bits 1 2 -> -> 1 `i `uc ]
+[; ;main.c: 139: TMR0L = 100;
 "139
-[e :U 370 ]
-{
-[; ;main.c: 140: if(contador == 100){
-"140
-[e $ ! == -> _contador `i -> 100 `i 372  ]
-{
-[; ;main.c: 141: result3 = dc;
-"141
-[e = _result3 -> _dc `i ]
-[; ;main.c: 142: aux = result % 1000;
+[e = _TMR0L -> -> 100 `i `uc ]
+[; ;main.c: 142: CCP2CONbits.CCP2M3 = 1;
 "142
-[e = _aux -> % _result -> -> -> 1000 `i `l `ul `i ]
-[; ;main.c: 143: cent = aux / 100;
+[e = . . _CCP2CONbits 1 3 -> -> 1 `i `uc ]
+[; ;main.c: 143: CCP2CONbits.CCP2M2 = 1;
 "143
-[e = _cent / _aux -> 100 `i ]
-[; ;main.c: 144: aux = aux % 100;
-"144
-[e = _aux % _aux -> 100 `i ]
-[; ;main.c: 145: dez = aux / 10;
-"145
-[e = _dez / _aux -> 10 `i ]
-[; ;main.c: 146: uni = aux % 10;
+[e = . . _CCP2CONbits 1 2 -> -> 1 `i `uc ]
+[; ;main.c: 146: OpenXLCD(0b00101100 & 0b00111000);
 "146
-[e = _uni % _aux -> 10 `i ]
-[; ;main.c: 147: aux2 = result2 % 1000;
+[e ( _OpenXLCD (1 -> & -> 44 `i -> 56 `i `uc ]
+[; ;main.c: 147: WriteCmdXLCD(0x01);
 "147
-[e = _aux2 -> % _result2 -> -> -> 1000 `i `l `ul `i ]
-[; ;main.c: 148: cent2 = aux2 / 100;
+[e ( _WriteCmdXLCD (1 -> -> 1 `i `uc ]
+[; ;main.c: 148: _delay((unsigned long)((2)*(20000000/4000.0)));
 "148
-[e = _cent2 / _aux2 -> 100 `i ]
-[; ;main.c: 149: aux2 = aux2 % 100;
-"149
-[e = _aux2 % _aux2 -> 100 `i ]
-[; ;main.c: 150: dez2 = aux2 / 10;
-"150
-[e = _dez2 / _aux2 -> 10 `i ]
-[; ;main.c: 151: uni2 = aux2 % 10;
-"151
-[e = _uni2 % _aux2 -> 10 `i ]
-[; ;main.c: 152: WriteCmdXLCD(0x80);
-"152
-[e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
-[; ;main.c: 153: putsXLCD("Ta:");
-"153
-[e ( _putsXLCD (1 -> :s 1C `*uc ]
-[; ;main.c: 154: WriteDataXLCD(0x30 + cent);
-"154
-[e ( _WriteDataXLCD (1 -> + -> 48 `i _cent `uc ]
-[; ;main.c: 155: WriteDataXLCD(0x30 + dez);
+[e ( __delay (1 -> * -> -> 2 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 155: while (1) {
 "155
-[e ( _WriteDataXLCD (1 -> + -> 48 `i _dez `uc ]
-[; ;main.c: 156: WriteDataXLCD(',');
+[e :U 375 ]
+{
+[; ;main.c: 156: if (contador == 100) {
 "156
-[e ( _WriteDataXLCD (1 -> -> 44 `ui `uc ]
-[; ;main.c: 157: WriteDataXLCD(0x30 + uni);
-"157
-[e ( _WriteDataXLCD (1 -> + -> 48 `i _uni `uc ]
-[; ;main.c: 158: WriteCmdXLCD(0x89);
+[e $ ! == -> _contador `i -> 100 `i 377  ]
+{
+[; ;main.c: 158: pot = 537 + (0.22 * result2);
 "158
-[e ( _WriteCmdXLCD (1 -> -> 137 `i `uc ]
-[; ;main.c: 159: putsXLCD("Tr:");
+[e = _pot -> + -> -> 537 `i `d * .0.22 -> _result2 `d `ul ]
+[; ;main.c: 159: CCPR2L = (char) pot >> 2;
 "159
-[e ( _putsXLCD (1 -> :s 2C `*uc ]
-[; ;main.c: 160: WriteDataXLCD(0x30 + cent2);
+[e = _CCPR2L -> >> -> -> _pot `uc `i -> 2 `i `uc ]
+[; ;main.c: 160: CCP2CONbits.DC2B1 = (pot >> 1) % 2;
 "160
-[e ( _WriteDataXLCD (1 -> + -> 48 `i _cent2 `uc ]
-[; ;main.c: 161: WriteDataXLCD(0x30 + dez2);
+[e = . . _CCP2CONbits 1 5 -> % >> _pot -> 1 `i -> -> -> 2 `i `l `ul `uc ]
+[; ;main.c: 161: CCP2CONbits.DC2B0 = pot % 2;
 "161
-[e ( _WriteDataXLCD (1 -> + -> 48 `i _dez2 `uc ]
-[; ;main.c: 162: WriteDataXLCD(',');
-"162
-[e ( _WriteDataXLCD (1 -> -> 44 `ui `uc ]
-[; ;main.c: 163: WriteDataXLCD(0x30 + uni2);
+[e = . . _CCP2CONbits 1 4 -> % _pot -> -> -> 2 `i `l `ul `uc ]
+[; ;main.c: 163: cent = result / 100;
 "163
-[e ( _WriteDataXLCD (1 -> + -> 48 `i _uni2 `uc ]
-[; ;main.c: 164: dc = (result2-result);
+[e = _cent -> / _result -> -> -> 100 `i `l `ul `i ]
+[; ;main.c: 164: aux = result % 100;
 "164
-[e = _dc - _result2 _result ]
-[; ;main.c: 165: if((dconst*dc)<0)
+[e = _aux -> % _result -> -> -> 100 `i `l `ul `i ]
+[; ;main.c: 165: dez = aux / 10;
 "165
-[e $ ! < * -> _dconst `ul _dc -> -> -> 0 `i `l `ul 373  ]
-[; ;main.c: 166: duty = 0;
+[e = _dez / _aux -> 10 `i ]
+[; ;main.c: 166: uni = aux % 10;
 "166
-[e = _duty -> -> 0 `i `ui ]
-[e $U 374  ]
+[e = _uni % _aux -> 10 `i ]
+[; ;main.c: 167: WriteCmdXLCD(0x80);
 "167
-[e :U 373 ]
-[; ;main.c: 167: else
-[; ;main.c: 168: duty = dconst*dc;
+[e ( _WriteCmdXLCD (1 -> -> 128 `i `uc ]
+[; ;main.c: 168: putsXLCD("Ta:");
 "168
-[e = _duty -> * -> _dconst `ul _dc `ui ]
-[e :U 374 ]
-[; ;main.c: 169: WriteCmdXLCD(0xC3);
+[e ( _putsXLCD (1 -> :s 1C `*uc ]
+[; ;main.c: 169: WriteDataXLCD(0x30 + cent);
 "169
-[e ( _WriteCmdXLCD (1 -> -> 195 `i `uc ]
-[; ;main.c: 170: putsXLCD("Razao:");
+[e ( _WriteDataXLCD (1 -> + -> 48 `i _cent `uc ]
+[; ;main.c: 170: WriteDataXLCD(0x30 + dez);
 "170
-[e ( _putsXLCD (1 -> :s 3C `*uc ]
-[; ;main.c: 171: cent3 = dc / 100;
+[e ( _WriteDataXLCD (1 -> + -> 48 `i _dez `uc ]
+[; ;main.c: 171: WriteDataXLCD(',');
 "171
-[e = _cent3 -> / _dc -> -> -> 100 `i `l `ul `i ]
-[; ;main.c: 172: aux3 = dc % 100;
+[e ( _WriteDataXLCD (1 -> -> 44 `ui `uc ]
+[; ;main.c: 172: WriteDataXLCD(0x30 + uni);
 "172
-[e = _aux3 -> % _dc -> -> -> 100 `i `l `ul `i ]
-[; ;main.c: 173: dez3 = aux3 / 10;
-"173
-[e = _dez3 / _aux3 -> 10 `i ]
-[; ;main.c: 174: uni3 = aux3 % 10;
+[e ( _WriteDataXLCD (1 -> + -> 48 `i _uni `uc ]
+[; ;main.c: 174: dez2 = temp/100;
 "174
-[e = _uni3 % _aux3 -> 10 `i ]
-[; ;main.c: 175: WriteDataXLCD(0x30 + cent3);
+[e = _dez2 -> / _temp -> -> -> 100 `i `l `ul `i ]
+[; ;main.c: 175: aux2 = temp%100;
 "175
-[e ( _WriteDataXLCD (1 -> + -> 48 `i _cent3 `uc ]
-[; ;main.c: 176: WriteDataXLCD(0x30 + dez3);
+[e = _aux2 -> % _temp -> -> -> 100 `i `l `ul `i ]
+[; ;main.c: 176: uni2 = aux2/10;
 "176
-[e ( _WriteDataXLCD (1 -> + -> 48 `i _dez3 `uc ]
-[; ;main.c: 177: WriteDataXLCD(0x30 + uni3);
+[e = _uni2 / _aux2 -> 10 `i ]
+[; ;main.c: 177: WriteCmdXLCD(0x89);
 "177
-[e ( _WriteDataXLCD (1 -> + -> 48 `i _uni3 `uc ]
-[; ;main.c: 179: WriteDataXLCD('%');
+[e ( _WriteCmdXLCD (1 -> -> 137 `i `uc ]
+[; ;main.c: 178: putsXLCD("Tr:");
+"178
+[e ( _putsXLCD (1 -> :s 2C `*uc ]
+[; ;main.c: 179: WriteDataXLCD(0x30 + dez2);
 "179
-[e ( _WriteDataXLCD (1 -> -> 37 `ui `uc ]
+[e ( _WriteDataXLCD (1 -> + -> 48 `i _dez2 `uc ]
+[; ;main.c: 180: WriteDataXLCD(0x30 + uni2);
 "180
-}
-[e :U 372 ]
-"181
-}
-[e :U 369 ]
-"139
-[e $U 370  ]
-[e :U 371 ]
-[; ;main.c: 180: }
-[; ;main.c: 181: }
-[; ;main.c: 182: }
+[e ( _WriteDataXLCD (1 -> + -> 48 `i _uni2 `uc ]
+[; ;main.c: 182: dc = (result-temp);
 "182
-[e :UE 368 ]
+[e = _dc -> - _result _temp `i ]
+[; ;main.c: 183: if(dc<=0)
+"183
+[e $ ! <= _dc -> 0 `i 378  ]
+[; ;main.c: 184: dc = 0;
+"184
+[e = _dc -> 0 `i ]
+[e $U 379  ]
+"185
+[e :U 378 ]
+[; ;main.c: 185: else if(dc>1)
+[e $ ! > _dc -> 1 `i 380  ]
+[; ;main.c: 186: dc = 1;
+"186
+[e = _dc -> 1 `i ]
+[e :U 380 ]
+"188
+[e :U 379 ]
+[; ;main.c: 188: vent = 768*dc;
+[e = _vent -> -> * -> 768 `i _dc `l `ul ]
+[; ;main.c: 189: CCPR1L = (char) (vent >> 2);
+"189
+[e = _CCPR1L -> >> _vent -> 2 `i `uc ]
+[; ;main.c: 190: CCP1CONbits.DC1B0 = vent % 2;
+"190
+[e = . . _CCP1CONbits 1 4 -> % _vent -> -> -> 2 `i `l `ul `uc ]
+[; ;main.c: 191: CCP1CONbits.DC1B1 = (vent >> 1) % 2;
+"191
+[e = . . _CCP1CONbits 1 5 -> % >> _vent -> 1 `i -> -> -> 2 `i `l `ul `uc ]
+[; ;main.c: 193: porcentagem = dc2*100;
+"193
+[e = _porcentagem -> * _dc2 -> -> 100 `i `f `i ]
+[; ;main.c: 194: WriteCmdXLCD(0xC3);
+"194
+[e ( _WriteCmdXLCD (1 -> -> 195 `i `uc ]
+[; ;main.c: 195: putsXLCD("Razao:");
+"195
+[e ( _putsXLCD (1 -> :s 3C `*uc ]
+[; ;main.c: 196: cent3 = porcentagem / 100;
+"196
+[e = _cent3 / _porcentagem -> 100 `i ]
+[; ;main.c: 197: aux3 = porcentagem % 100;
+"197
+[e = _aux3 % _porcentagem -> 100 `i ]
+[; ;main.c: 198: dez3 = aux3 / 10;
+"198
+[e = _dez3 / _aux3 -> 10 `i ]
+[; ;main.c: 199: uni3 = aux3 % 10;
+"199
+[e = _uni3 % _aux3 -> 10 `i ]
+[; ;main.c: 200: WriteDataXLCD(0x30 + cent3);
+"200
+[e ( _WriteDataXLCD (1 -> + -> 48 `i _cent3 `uc ]
+[; ;main.c: 201: WriteDataXLCD(0x30 + dez3);
+"201
+[e ( _WriteDataXLCD (1 -> + -> 48 `i _dez3 `uc ]
+[; ;main.c: 202: WriteDataXLCD(0x30 + uni3);
+"202
+[e ( _WriteDataXLCD (1 -> + -> 48 `i _uni3 `uc ]
+[; ;main.c: 203: WriteDataXLCD('%');
+"203
+[e ( _WriteDataXLCD (1 -> -> 37 `ui `uc ]
+"204
+}
+[e :U 377 ]
+"205
+}
+[e :U 374 ]
+"155
+[e $U 375  ]
+[e :U 376 ]
+[; ;main.c: 204: }
+[; ;main.c: 205: }
+[; ;main.c: 206: }
+"206
+[e :UE 373 ]
 }
 [a 2C 84 114 58 0 ]
 [a 3C 82 97 122 97 111 58 0 ]

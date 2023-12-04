@@ -1,5 +1,6 @@
 #include <xc.h>
 #include "nxlcd.h"
+#include <stdio.h>
 #pragma config FOSC = HS // Fosc = 20MHz; Tcy = 200ns
 #pragma config CPUDIV = OSC1_PLL2 // OSC/1 com PLL off
 #pragma config WDT = OFF // Watchdog desativado
@@ -13,11 +14,12 @@ unsigned char contador = 0;
 unsigned long int result = 0;
 unsigned long int result2 = 0;
 unsigned long int valorconv = 0;
-unsigned float dconst = 768.00; //(PR2+1)*4
+unsigned long int dconst = 768; //(PR2+1)*4
 
-unsigned float dc = 0;
-unsigned float vent = 0;
-unsigned float pot = 0;
+int dc = 0;
+float dc2 = 0.0;
+unsigned long int vent = 0;
+unsigned long int pot = 0;
 unsigned int leiturapotenciometro = 0;
 unsigned long int temp = 350;
 
@@ -45,10 +47,7 @@ void interrupt low_priority LowPriorityISR(void) {
     valorconv = 256 * ADRESH + ADRESL;
     if (leiturapotenciometro) {
         leiturapotenciometro = 0;
-        result2 = valorconv; // 0 a 1023
-        CCPR2L = (char) pot >> 2;
-        CCP2CONbits.DC2B1 = (pot >> 1) % 2;
-        CCP2CONbits.DC2B0 = pot % 2;
+        result2 = valorconv;
     } else {
         result = valorconv * 4.887585533;
     }
@@ -57,11 +56,13 @@ void interrupt low_priority LowPriorityISR(void) {
         INTCON3bits.INT1IF = 0; // Limpa flag do INT1
         if (temp < 500)
             temp=temp+10;
+            __delay_ms(500);
     }
     if (INTCON3bits.INT2IF) {
         INTCON3bits.INT2IF = 0; // Limpa flag do INT2
         if (temp > 350)
             temp=temp-10;
+            __delay_ms(500);
         }
 }
 
@@ -92,10 +93,7 @@ void main(void) {
     // (2^8)*(200*(10^-9))*4
     // PR2 = (1/6500)/(200*(10^-9)*4)-1 = 191
     PR2 = 191;
-
-    CCPR1L = (char) (vent >> 2);
-    CCP1CONbits.DC1B0 = vent % 2;
-    CCP1CONbits.DC1B1 = (vent >> 1) % 2;
+    
 
     // Configuracao conversor A/D
     PIE1bits.ADIE = 1; // ativa o bit de interrupcao
@@ -123,7 +121,7 @@ void main(void) {
     INTCON3bits.INT2IF = 0; // Limpar flag INT2
     INTCON3bits.INT1IP = 0; // Baixa do INT1 prioridade
     INTCON3bits.INT2IP = 0; // Baixa do INT2 prioridade
-    INTCON2.RBPU = 0; // Pull-up habilitado no PORTB
+    INTCON2bits.RBPU = 0; // Pull-up habilitado no PORTB
 
     // Configuracao do Timer0
     T0CON = 0b11000101; // timer on, 8 bits, clock interno, borda de subida, pre scaler de 64
@@ -144,11 +142,6 @@ void main(void) {
     CCP2CONbits.CCP2M3 = 1;
     CCP2CONbits.CCP2M2 = 1;
 
-    pot = 537.6 + (0.22521994134897360703812316715543 * (float)result2); // (((PR2+1)*4)-((PR2+1)*4)*0.7) / 1023
-    CCPR2L = (char) pot >> 2;
-    CCP2CONbits.DC2B1 = (pot >> 1) % 2;
-    CCP2CONbits.DC2B0 = pot % 2;
-
     //Inicializa��o do LCD
     OpenXLCD(FOUR_BIT & LINES_5X7);
     WriteCmdXLCD(0x01);
@@ -162,7 +155,7 @@ void main(void) {
     while (1) {
         if (contador == 100) {
             
-            pot = 537.6 + (0.22521994134897360703812316715543 * result2); // (((PR2+1)*4)-((PR2+1)*4)*0.7) / 1023
+            pot = 537 + (0.22 * result2); // (((PR2+1)*4)-((PR2+1)*4)*0.7) / 1023
             CCPR2L = (char) pot >> 2;
             CCP2CONbits.DC2B1 = (pot >> 1) % 2;
             CCP2CONbits.DC2B0 = pot % 2;
@@ -171,8 +164,8 @@ void main(void) {
             aux = result % 100;
             dez = aux / 10;
             uni = aux % 10;
-            putsXLCD("Ta:");
             WriteCmdXLCD(0x80);
+            putsXLCD("Ta:");
             putcXLCD(0x30 + cent);
             putcXLCD(0x30 + dez);
             putcXLCD(',');
@@ -186,18 +179,18 @@ void main(void) {
             putcXLCD(0x30 + dez2);
             putcXLCD(0x30 + uni2);
             
-            dc = -(float)(result-temp);
-            if(dc<0)
+            dc = (result-temp);
+            if(dc<=0)
                 dc = 0;
             else if(dc>1)
                 dc = 1;
             
-            vent = (float)(dconst)*dc;
+            vent = 768*dc;
             CCPR1L = (char) (vent >> 2);
             CCP1CONbits.DC1B0 = vent % 2;
             CCP1CONbits.DC1B1 = (vent >> 1) % 2;
             
-            porcentagem = (int)(dc*100.00);
+            porcentagem = (-(result-temp))*100;
             WriteCmdXLCD(0xC3);
             putsXLCD("Razao:");
             cent3 = porcentagem / 100;

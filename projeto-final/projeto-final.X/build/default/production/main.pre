@@ -4840,8 +4840,71 @@ void putsXLCD( char *);
 # 149
 void putrsXLCD(const char *);
 
+# 4 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\__size_t.h"
+typedef unsigned size_t;
 
-# 3 "main.c"
+# 7 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v1.45\include\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+
+# 4 "main.c"
 #pragma config FOSC = HS
 #pragma config CPUDIV = OSC1_PLL2
 #pragma config WDT = OFF
@@ -4849,26 +4912,33 @@ void putrsXLCD(const char *);
 #pragma config DEBUG = ON
 #pragma config MCLRE = ON
 
+#pragma config CCP2MX = ON
+
 unsigned char contador = 0;
 unsigned long int result = 0;
 unsigned long int result2 = 0;
-unsigned int valorconv = 0;
-unsigned long int dc = 0;
-unsigned int dconst = 768;
-unsigned int duty = 768, leiturapotenciometro = 0;
+unsigned long int valorconv = 0;
+unsigned long int dconst = 768;
 
-void interrupt HighPriorityISR(void){
+int dc = 0;
+float dc2 = 0.0;
+unsigned long int vent = 0;
+unsigned long int pot = 0;
+unsigned int leiturapotenciometro = 0;
+unsigned long int temp = 350;
+
+void interrupt HighPriorityISR(void) {
 INTCONbits.TMR0IF = 0;
 TMR0L = 100;
 ADCON0bits.GO_DONE = 1;
-if(contador == 100){
+if (contador == 100) {
 contador = 1;
 leiturapotenciometro = 1;
 ADCON0bits.CHS1 = 1;
 ADCON0bits.CHS0 = 1;
 ADCON0bits.GO_DONE = 1;
 
-}else {
+} else {
 ADCON0bits.CHS1 = 0;
 ADCON0bits.CHS0 = 0;
 ADCON0bits.GO_DONE = 1;
@@ -4879,21 +4949,31 @@ void interrupt low_priority LowPriorityISR(void) {
 PIR1bits.ADIF = 0;
 contador++;
 valorconv = 256 * ADRESH + ADRESL;
-if(leiturapotenciometro){
+if (leiturapotenciometro) {
 leiturapotenciometro = 0;
-result2 = 4.887585533*valorconv;
-result2 = result2*0.03;
-result2 = 350+result2;
+result2 = valorconv;
 } else {
-result = valorconv*4.887585533;
+result = valorconv * 4.887585533;
 }
 
+if (INTCON3bits.INT1IF) {
+INTCON3bits.INT1IF = 0;
+if (temp < 500)
+temp=temp+10;
+_delay((unsigned long)((500)*(20000000/4000.0)));
+}
+if (INTCON3bits.INT2IF) {
+INTCON3bits.INT2IF = 0;
+if (temp > 350)
+temp=temp-10;
+_delay((unsigned long)((500)*(20000000/4000.0)));
+}
 }
 
 void main(void) {
-int cent,aux,dez,uni;
-int mil2,cent2,aux2,dez2,uni2;
-int result3,cent3,aux3,dez3,uni3;
+int cent, aux, dez, uni;
+int dez2, aux2, uni2;
+int porcentagem, cent3, aux3, dez3, uni3;
 
 TRISA = 0xFF;
 TRISC = 0x00;
@@ -4918,9 +4998,6 @@ T2CONbits.T2CKPS0 = 1;
 
 PR2 = 191;
 
-CCPR1L = (char)(duty >> 2);
-CCP1CONbits.DC1B0 = duty%2;
-CCP1CONbits.DC1B1 = (duty >> 1)%2;
 
 
 PIE1bits.ADIE = 1;
@@ -4948,6 +5025,7 @@ INTCON3bits.INT1IF = 0;
 INTCON3bits.INT2IF = 0;
 INTCON3bits.INT1IP = 0;
 INTCON3bits.INT2IP = 0;
+INTCON2bits.RBPU = 0;
 
 
 T0CON = 0b11000101;
@@ -4973,47 +5051,55 @@ OpenXLCD(0b00101100 & 0b00111000);
 WriteCmdXLCD(0x01);
 _delay((unsigned long)((2)*(20000000/4000.0)));
 
-# 139
-while(1){
-if(contador == 100){
-result3 = dc;
-aux = result % 1000;
-cent = aux / 100;
-aux = aux % 100;
+# 155
+while (1) {
+if (contador == 100) {
+
+pot = 537 + (0.22 * result2);
+CCPR2L = (char) pot >> 2;
+CCP2CONbits.DC2B1 = (pot >> 1) % 2;
+CCP2CONbits.DC2B0 = pot % 2;
+
+cent = result / 100;
+aux = result % 100;
 dez = aux / 10;
 uni = aux % 10;
-aux2 = result2 % 1000;
-cent2 = aux2 / 100;
-aux2 = aux2 % 100;
-dez2 = aux2 / 10;
-uni2 = aux2 % 10;
 WriteCmdXLCD(0x80);
 putsXLCD("Ta:");
 WriteDataXLCD(0x30 + cent);
 WriteDataXLCD(0x30 + dez);
 WriteDataXLCD(',');
 WriteDataXLCD(0x30 + uni);
+
+dez2 = temp/100;
+aux2 = temp%100;
+uni2 = aux2/10;
 WriteCmdXLCD(0x89);
 putsXLCD("Tr:");
-WriteDataXLCD(0x30 + cent2);
 WriteDataXLCD(0x30 + dez2);
-WriteDataXLCD(',');
 WriteDataXLCD(0x30 + uni2);
-dc = (result2-result);
-if((dconst*dc)<0)
-duty = 0;
-else
-duty = dconst*dc;
+
+dc = (result-temp);
+if(dc<=0)
+dc = 0;
+else if(dc>1)
+dc = 1;
+
+vent = 768*dc;
+CCPR1L = (char) (vent >> 2);
+CCP1CONbits.DC1B0 = vent % 2;
+CCP1CONbits.DC1B1 = (vent >> 1) % 2;
+
+porcentagem = dc2*100;
 WriteCmdXLCD(0xC3);
 putsXLCD("Razao:");
-cent3 = dc / 100;
-aux3 = dc % 100;
+cent3 = porcentagem / 100;
+aux3 = porcentagem % 100;
 dez3 = aux3 / 10;
 uni3 = aux3 % 10;
 WriteDataXLCD(0x30 + cent3);
 WriteDataXLCD(0x30 + dez3);
 WriteDataXLCD(0x30 + uni3);
-
 WriteDataXLCD('%');
 }
 }
